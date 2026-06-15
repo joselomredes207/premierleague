@@ -337,7 +337,7 @@ function crearBotonMover(id,destino){
  b.addEventListener('click',()=>window.moverPublicacion(id,destino));
  return b;
 }
-function paint(g,f,id){
+function paint(g,f,id,prepend=false){
  const cat=f.categoria||'memes';
  const card=document.createElement('div');
  card.className='imgcard card';
@@ -363,7 +363,11 @@ function paint(g,f,id){
  Object.keys(cats).filter(k=>k!==cat).forEach(k=>move.appendChild(crearBotonMover(id,k)));
  body.appendChild(move);
  card.append(trash,img,body);
- g.appendChild(card);
+ if(prepend){
+  g.prepend(card);
+ }else{
+  g.appendChild(card);
+ }
 }
 async function cargarCategoria(cat,force=false){
  if(!cats[cat]||state[cat].loading)return;
@@ -413,18 +417,40 @@ window.subirImagenCategoria=async(e,cat)=>{
  const title=cats[cat].t.value.trim()||'Publicación oficial';
  setE(cat,'Comprimiendo imagen...');
  try{
- const src=await comprimir(file);
- if(src.length>800000){setE(cat,'❌ Imagen demasiado pesada incluso comprimida.','err');return;}
- await initFirebase();
- await fb.addDoc(noticias,{titulo:title,src,categoria:cat,tipo:'imagen-firestore',fecha:fb.serverTimestamp()});
- cats[cat].t.value='';
- e.target.value='';
- state[cat].loaded=false;
- if(activeCategory===cat)await cargarCategoria(cat,true);
- setE(cat,'✅ Publicado en '+cats[cat].n+'.','okmsg');
+  const src=await comprimir(file);
+  if(src.length>800000){
+   setE(cat,'❌ Imagen demasiado pesada incluso comprimida.','err');
+   e.target.value='';
+   return;
+  }
+  await initFirebase();
+  const docRef=await fb.addDoc(noticias,{titulo:title,src,categoria:cat,tipo:'imagen-firestore',fecha:fb.serverTimestamp()});
+  cats[cat].t.value='';
+  e.target.value='';
+
+  // SOLUCIÓN: mostrar la imagen al instante sin tener que pulsar F5.
+  // Firestore puede tardar unos milisegundos en devolver el nuevo documento en getDocs(),
+  // así que pintamos una copia local inmediata y luego recargamos suavemente para ordenar.
+  const g=cats[cat]?.g;
+  if(g){
+   const emptyBox=g.querySelector('.empty');
+   if(emptyBox)emptyBox.remove();
+   paint(g,{titulo:title,src,categoria:cat,tipo:'imagen-firestore',fecha:Date.now()},docRef.id,true);
+  }
+
+  state[cat].loaded=false;
+  setE(cat,'✅ Publicado en '+cats[cat].n+'.','okmsg');
+
+  // Recarga de seguridad para sincronizar con Firestore y mantener el orden correcto.
+  setTimeout(()=>{
+   if(activeCategory===cat){
+    cargarCategoria(cat,true);
+   }
+  },900);
  }catch(err){
- console.error(err);
- setE(cat,'❌ No se pudo publicar.','err');
+  console.error(err);
+  setE(cat,'❌ No se pudo publicar.','err');
+  e.target.value='';
  }
 };
 window.borrarFotoPrensaReal=async id=>{
