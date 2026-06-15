@@ -1143,8 +1143,153 @@ body.profile-mini-mode.profile-pointer-near .profile-pill{
 /* Si se elimina un comentario principal, sus respuestas dejan de contar y se borran junto a él. */
 
 
-/* ===== RESTAURAR MÚSICA EN MÓVIL SIN TAPAR COMENTARIOS ===== */
+/* ===== RECLAMAR PUBLICACIONES SIN AUTOR + MODAL BONITO ===== */
+.claim-btn{border:1px solid rgba(235,255,0,.45)!important;background:rgba(235,255,0,.12)!important;color:var(--pl-lime)!important;border-radius:999px!important;padding:10px 14px!important;font-weight:1000!important;cursor:pointer!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important}.claim-btn:hover{background:linear-gradient(135deg,var(--pl-lime),var(--pl-green))!important;color:#16001d!important;border-color:transparent!important}.legacy-author-warning{margin:8px auto 10px!important;padding:8px 11px!important;border-radius:13px!important;background:rgba(235,255,0,.10)!important;border:1px solid rgba(235,255,0,.25)!important;color:var(--pl-lime)!important;font-size:.78rem!important;font-weight:1000!important;max-width:92%!important}.claim-post-modal{position:fixed;inset:0;z-index:940000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}.claim-post-modal.open{display:flex}.claim-post-box{width:min(92vw,520px);border-radius:26px;background:linear-gradient(145deg,rgba(22,0,29,.98),rgba(58,5,72,.96));border:1px solid rgba(0,255,135,.45);box-shadow:0 28px 80px rgba(0,0,0,.68),0 0 34px rgba(0,255,135,.14);padding:22px;position:relative;color:#fff;overflow:hidden}.claim-post-box:before{content:'';position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--pl-lime),var(--pl-green),var(--pl-cyan))}.claim-post-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:1.45rem;font-weight:1000;cursor:pointer}.claim-post-head{display:flex;gap:14px;align-items:center;margin-right:44px;margin-bottom:12px}.claim-post-icon{width:52px;height:52px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:rgba(235,255,0,.14);border:1px solid rgba(235,255,0,.34);font-size:1.55rem;flex:0 0 52px}.claim-post-box h3{margin:0;color:#fff;font-size:1.25rem;line-height:1.15}.claim-post-box p{margin:6px 0 0;color:#eadcf0;line-height:1.45;font-weight:800}.claim-post-preview{margin:16px 0;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.22);display:none}.claim-post-preview.show{display:block}.claim-post-preview img{width:100%;max-height:220px;object-fit:cover;display:block}.claim-post-note{margin:12px 0 0;padding:11px 13px;border-radius:15px;background:rgba(0,255,135,.09);border:1px solid rgba(0,255,135,.20);color:#f2e8f6;font-weight:900;line-height:1.35}.claim-post-note b{color:var(--pl-green)}.claim-post-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:16px}.claim-post-actions button{border:0;border-radius:14px;padding:12px 16px;font-weight:1000;cursor:pointer}.claim-post-cancel{background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.14)!important}.claim-post-confirm{background:linear-gradient(135deg,var(--pl-lime),var(--pl-green));color:#16001d;box-shadow:0 10px 22px rgba(0,255,135,.22)}.claim-post-status{min-height:20px;margin-top:10px;color:var(--pl-green);font-weight:1000}
+/* ===== FIX DEFINITIVO BOTÓN MÚSICA: CLICK FUNCIONA Y NO DESAPARECE ===== */
+.bgm-audio-panel,body.lock .bgm-audio-panel,body.social-lightbox-open .bgm-audio-panel{display:block!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;position:fixed!important;left:10px!important;right:auto!important;bottom:calc(env(safe-area-inset-bottom) + 10px)!important;z-index:10000090!important;transform:none!important}#bgm-audio-btn,body.lock #bgm-audio-btn,body.social-lightbox-open #bgm-audio-btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-width:118px!important;width:auto!important;height:42px!important;min-height:42px!important;padding:0 12px!important;border-radius:999px!important;border:1px solid rgba(0,255,135,.48)!important;background:linear-gradient(135deg,rgba(45,6,55,.96),rgba(22,0,29,.96))!important;color:var(--pl-green)!important;font-size:.78rem!important;font-weight:1000!important;line-height:1!important;white-space:nowrap!important;box-shadow:0 12px 28px rgba(0,0,0,.48),0 0 20px rgba(0,255,135,.18)!important;cursor:pointer!important}#bgm-audio-btn::before,body.lock #bgm-audio-btn::before,body.social-lightbox-open #bgm-audio-btn::before{content:none!important}#bgm-audio-btn.music-on,#bgm-audio-btn.on{background:linear-gradient(135deg,var(--pl-green),var(--pl-cyan))!important;color:#16001d!important;border-color:transparent!important}@media(max-width:380px){#bgm-audio-btn,body.lock #bgm-audio-btn,body.social-lightbox-open #bgm-audio-btn{min-width:104px!important;width:auto!important;padding:0 10px!important;font-size:.70rem!important}}
+
+
+/* ===== FIX DEFINITIVO FOTO PERFIL OTRO ENTRENADOR: SIEMPRE DELANTE ===== */
+.profile-photo-viewer{
+  position:fixed!important;
+  inset:0!important;
+  z-index:2147483000!important;
+  display:none!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:rgba(0,0,0,.94)!important;
+  padding:22px!important;
+  isolation:isolate!important;
+  pointer-events:none!important;
+}
+.profile-photo-viewer.open{
+  display:flex!important;
+  pointer-events:auto!important;
+}
+.profile-photo-viewer img{
+  position:relative!important;
+  z-index:2147483001!important;
+  width:auto!important;
+  max-width:92vw!important;
+  max-height:90vh!important;
+  object-fit:contain!important;
+  border:3px solid var(--pl-green)!important;
+  border-radius:24px!important;
+  background:#16001d!important;
+  box-shadow:0 24px 80px rgba(0,0,0,.75),0 0 36px rgba(0,255,135,.22)!important;
+}
+.profile-photo-viewer button{
+  z-index:2147483002!important;
+}
+.mini-profile-viewer{
+  z-index:900000!important;
+}
+body.profile-photo-open .mini-profile-viewer,
+body.profile-photo-open .lightbox,
+body.profile-photo-open .modal:not(.profile-modal),
+body.profile-photo-open .notify-fab,
+body.profile-photo-open .bgm-audio-panel{
+  pointer-events:none!important;
+}
+
+
+/* ===== FIX FINAL MÓVIL: RECLAMAR + COMENTARIOS + MÚSICA SIN TAPAR ===== */
 @media(max-width:740px){
+  .lightbox.social-mode{
+    padding:0!important;
+    overflow:hidden!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+  }
+  .lightbox.social-mode .social-viewer{
+    width:100vw!important;
+    height:100dvh!important;
+    max-height:100dvh!important;
+    border:0!important;
+    border-radius:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+  }
+  .lightbox.social-mode #img-ampliada{
+    width:100%!important;
+    height:32dvh!important;
+    max-height:32dvh!important;
+    min-height:170px!important;
+    flex:0 0 32dvh!important;
+    object-fit:contain!important;
+    border:0!important;
+    border-radius:0!important;
+    background:#050006!important;
+  }
+  .lightbox.social-mode .social-panel{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    overflow:hidden!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+  .lightbox.social-mode .social-panel-head,
+  .lightbox.social-mode .social-panel-title,
+  .lightbox.social-mode .social-panel-actions,
+  .lightbox.social-mode .social-comments-title{
+    flex:0 0 auto!important;
+  }
+  .lightbox.social-mode .social-panel-head{padding:10px 12px!important;gap:9px!important}
+  .lightbox.social-mode .social-panel-head img{width:42px!important;height:42px!important}
+  .lightbox.social-mode .social-panel-title{padding:10px 12px!important;font-size:.98rem!important;line-height:1.25!important}
+  .lightbox.social-mode .social-panel-actions{padding:8px 10px!important}
+  .lightbox.social-mode .social-panel-actions .post-actions{display:flex!important;flex-wrap:wrap!important;gap:7px!important;justify-content:center!important}
+  .lightbox.social-mode .react-btn,
+  .lightbox.social-mode .download-btn,
+  .lightbox.social-mode .claim-btn{padding:8px 10px!important;font-size:.76rem!important;min-height:38px!important}
+  .lightbox.social-mode .claim-btn{display:inline-flex!important;visibility:visible!important;opacity:1!important}
+  .lightbox.social-mode .social-comments-title{padding:8px 12px 6px!important;font-size:.96rem!important}
+  .lightbox.social-mode .social-panel-comments{
+    flex:1 1 auto!important;
+    min-height:112px!important;
+    max-height:none!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    padding:8px 10px 10px!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+  .lightbox.social-mode .comment-form-wrap{
+    flex:0 0 auto!important;
+    position:relative!important;
+    bottom:auto!important;
+    padding:9px 10px calc(10px + env(safe-area-inset-bottom)) 10px!important;
+    background:linear-gradient(180deg,rgba(22,0,29,.96),#16001d)!important;
+    border-top:1px solid rgba(255,255,255,.10)!important;
+    z-index:6!important;
+  }
+  .lightbox.social-mode .comment-form{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto!important;
+    gap:8px!important;
+    align-items:center!important;
+    margin:0!important;
+  }
+  .lightbox.social-mode .comment-form input{
+    width:100%!important;
+    height:44px!important;
+    min-height:44px!important;
+    margin:0!important;
+    border-radius:15px!important;
+    font-size:.88rem!important;
+  }
+  .lightbox.social-mode .comment-form .btn,
+  .lightbox.social-mode .send-message-btn{
+    width:auto!important;
+    min-width:92px!important;
+    height:44px!important;
+    margin:0!important;
+    padding:0 12px!important;
+    border-radius:15px!important;
+    font-size:.74rem!important;
+  }
+  .bgm-audio-panel,
   body.lock .bgm-audio-panel,
   body.social-lightbox-open .bgm-audio-panel{
     display:block!important;
@@ -1155,199 +1300,24 @@ body.profile-mini-mode.profile-pointer-near .profile-pill{
     left:10px!important;
     right:auto!important;
     bottom:calc(env(safe-area-inset-bottom) + 10px)!important;
-    z-index:10000070!important;
-    transform:none!important;
+    z-index:10000090!important;
   }
-  body.lock #bgm-audio-btn,
-  body.social-lightbox-open #bgm-audio-btn{
-    height:42px!important;
-    min-height:42px!important;
-    padding:0 12px!important;
-    border-radius:999px!important;
-    font-size:.78rem!important;
-    box-shadow:0 10px 24px rgba(0,0,0,.48),0 0 18px rgba(0,255,135,.18)!important;
-  }
-  body.lock .music-mobile-hint,
-  body.social-lightbox-open .music-mobile-hint{
-    display:none!important;
-  }
-  body.lock .notify-fab,
-  body.social-lightbox-open .notify-fab,
-  body.lock .notify-panel,
-  body.social-lightbox-open .notify-panel{
-    display:none!important;
-    visibility:hidden!important;
-    opacity:0!important;
-    pointer-events:none!important;
-  }
-  .lightbox.social-mode .comment-form-wrap{
-    padding-left:108px!important;
-  }
-}
-@media(max-width:380px){
-  body.lock #bgm-audio-btn,
-  body.social-lightbox-open #bgm-audio-btn{
-    width:44px!important;
-    min-width:44px!important;
-    padding:0!important;
-    font-size:0!important;
-  }
-  body.lock #bgm-audio-btn::before,
-  body.social-lightbox-open #bgm-audio-btn::before{
-    content:'🎵';
-    font-size:1.05rem!important;
-  }
-  .lightbox.social-mode .comment-form-wrap{
-    padding-left:60px!important;
-  }
-}
-
-
-/* ===== FIX FINAL MÚSICA: BOTÓN SIEMPRE VISIBLE + VOLUMEN MÁS ALTO ===== */
-.bgm-audio-panel{
-  display:block!important;
-  visibility:visible!important;
-  opacity:1!important;
-  pointer-events:auto!important;
-  position:fixed!important;
-  left:auto!important;
-  right:14px!important;
-  bottom:84px!important;
-  z-index:10000080!important;
-  transform:none!important;
-}
-#bgm-audio-btn{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:7px!important;
-  min-width:128px!important;
-  height:44px!important;
-  padding:0 14px!important;
-  border-radius:999px!important;
-  border:1px solid rgba(0,255,135,.48)!important;
-  background:linear-gradient(135deg,rgba(45,6,55,.96),rgba(22,0,29,.96))!important;
-  color:var(--pl-green)!important;
-  font-size:.84rem!important;
-  font-weight:1000!important;
-  line-height:1!important;
-  white-space:nowrap!important;
-  box-shadow:0 12px 28px rgba(0,0,0,.48),0 0 20px rgba(0,255,135,.18)!important;
-  cursor:pointer!important;
-}
-#bgm-audio-btn.music-on,
-#bgm-audio-btn.on{
-  background:linear-gradient(135deg,var(--pl-green),var(--pl-cyan))!important;
-  color:#16001d!important;
-  border-color:transparent!important;
-}
-@media(max-width:740px){
-  .bgm-audio-panel,
-  body.lock .bgm-audio-panel,
-  body.social-lightbox-open .bgm-audio-panel{
-    display:block!important;
-    visibility:visible!important;
-    opacity:1!important;
-    pointer-events:auto!important;
-    left:10px!important;
-    right:auto!important;
-    bottom:calc(env(safe-area-inset-bottom) + 10px)!important;
-    z-index:10000080!important;
-  }
-  #bgm-audio-btn,
-  body.lock #bgm-audio-btn,
-  body.social-lightbox-open #bgm-audio-btn{
-    min-width:118px!important;
-    width:auto!important;
-    height:42px!important;
-    min-height:42px!important;
-    padding:0 12px!important;
-    font-size:.78rem!important;
-    border-radius:999px!important;
-  }
-  #bgm-audio-btn::before,
-  body.lock #bgm-audio-btn::before,
-  body.social-lightbox-open #bgm-audio-btn::before{
-    content:none!important;
-  }
-  .lightbox.social-mode .comment-form-wrap{
-    padding-left:124px!important;
-  }
-}
-@media(max-width:380px){
-  #bgm-audio-btn,
-  body.lock #bgm-audio-btn,
-  body.social-lightbox-open #bgm-audio-btn{
-    min-width:106px!important;
-    width:auto!important;
-    padding:0 10px!important;
-    font-size:.72rem!important;
-  }
-  .lightbox.social-mode .comment-form-wrap{
-    padding-left:112px!important;
-  }
-}
-
-/* ===== AJUSTE VOLUMEN MÚSICA: MEDIO ===== */
-
-/* ===== FIX DEFINITIVO BOTÓN MÚSICA: CLICK FUNCIONA Y NO DESAPARECE ===== */
-.bgm-audio-panel,
-body.lock .bgm-audio-panel,
-body.social-lightbox-open .bgm-audio-panel{
-  display:block!important;
-  visibility:visible!important;
-  opacity:1!important;
-  pointer-events:auto!important;
-  position:fixed!important;
-  left:10px!important;
-  right:auto!important;
-  bottom:calc(env(safe-area-inset-bottom) + 10px)!important;
-  z-index:10000090!important;
-  transform:none!important;
-}
-#bgm-audio-btn,
-body.lock #bgm-audio-btn,
-body.social-lightbox-open #bgm-audio-btn{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:7px!important;
-  min-width:118px!important;
-  width:auto!important;
-  height:42px!important;
-  min-height:42px!important;
-  padding:0 12px!important;
-  border-radius:999px!important;
-  border:1px solid rgba(0,255,135,.48)!important;
-  background:linear-gradient(135deg,rgba(45,6,55,.96),rgba(22,0,29,.96))!important;
-  color:var(--pl-green)!important;
-  font-size:.78rem!important;
-  font-weight:1000!important;
-  line-height:1!important;
-  white-space:nowrap!important;
-  box-shadow:0 12px 28px rgba(0,0,0,.48),0 0 20px rgba(0,255,135,.18)!important;
-  cursor:pointer!important;
-}
-#bgm-audio-btn::before,
-body.lock #bgm-audio-btn::before,
-body.social-lightbox-open #bgm-audio-btn::before{
-  content:none!important;
-}
-#bgm-audio-btn.music-on,
-#bgm-audio-btn.on{
-  background:linear-gradient(135deg,var(--pl-green),var(--pl-cyan))!important;
-  color:#16001d!important;
-  border-color:transparent!important;
-}
-@media(max-width:380px){
   #bgm-audio-btn,
   body.lock #bgm-audio-btn,
   body.social-lightbox-open #bgm-audio-btn{
     min-width:104px!important;
     width:auto!important;
+    height:40px!important;
     padding:0 10px!important;
-    font-size:.70rem!important;
+    font-size:.72rem!important;
+    border-radius:999px!important;
   }
+  .lightbox.social-mode .close{position:fixed!important;top:calc(env(safe-area-inset-top) + 10px)!important;right:12px!important;z-index:10000060!important;background:rgba(0,0,0,.42)!important;border-radius:999px!important;width:48px!important;height:48px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+}
+@media(max-width:380px){
+  .lightbox.social-mode #img-ampliada{height:29dvh!important;flex-basis:29dvh!important;min-height:150px!important}
+  #bgm-audio-btn,body.lock #bgm-audio-btn,body.social-lightbox-open #bgm-audio-btn{min-width:96px!important;font-size:.68rem!important}
+  .lightbox.social-mode .comment-form .btn,.lightbox.social-mode .send-message-btn{min-width:82px!important;font-size:.68rem!important;padding:0 9px!important}
 }
 
 </style></head><body class="light-purple-theme">
@@ -1363,7 +1333,7 @@ body.social-lightbox-open #bgm-audio-btn::before{
 <button class="fx-toggle on" id="fx-toggle" type="button">✨ FX ON</button>
 <div class="bgm-audio-panel" id="bgm-audio-panel"><button type="button" id="bgm-audio-btn">🔊 Música OFF</button></div><audio id="bgm-audio" preload="auto" loop crossorigin="anonymous"><source src="https://res.cloudinary.com/dqqiqb02u/video/upload/videoplayback_3_qvomvs.mp3" type="audio/mpeg"><source src="https://res.cloudinary.com/dqqiqb02u/video/upload/videoplayback_3_qvomvs.mp4" type="video/mp4"></audio>
 <div class="modal profile-modal" id="profile-modal" onclick="event.stopPropagation()"><div class="profile-content" onclick="event.stopPropagation()"><h2>👤 PERFIL DE ENTRENADOR</h2><p>La primera vez en cada dispositivo se crea un perfil. Aparecerá en publicaciones, likes y comentarios.</p><div class="profile-preview"><img id="profile-preview-img" alt="Avatar"><div><b id="profile-preview-name">Nuevo entrenador</b><br><span id="profile-preview-club" style="color:var(--pl-cyan);font-weight:1000">Sin club</span></div></div><input id="profile-name" class="input" placeholder="Nombre de entrenador"><select id="profile-club" class="input"><option value="">Escoge tu club</option><option>Liverpool FC</option><option>Tottenham Hotspur</option><option>Manchester City</option><option>Arsenal FC</option><option>Manchester United</option><option>Chelsea FC</option><option>Newcastle United</option><option>Organismo interno</option><option>Invitado</option></select><input type="file" id="profile-avatar-file" accept="image/*" class="input"><button class="profile-x-close" id="profile-x-close" type="button" aria-label="Cerrar perfil">&times;</button><div class="profile-actions-row"><button class="btn" id="save-profile-btn" type="button">Guardar perfil</button><div class="status" id="profile-status" aria-live="polite"></div></div></div></div>
-<div class="profile-photo-viewer" id="profile-photo-viewer" onclick="if(event.target===this)this.classList.remove('open')"><button type="button" onclick="document.getElementById('profile-photo-viewer').classList.remove('open')">&times;</button><img id="profile-photo-viewer-img" alt="Foto de perfil ampliada"></div>
+<div class="profile-photo-viewer" id="profile-photo-viewer" onclick="if(event.target===this){this.classList.remove('open');this.style.display='none';document.body.classList.remove('profile-photo-open')}"><button type="button" onclick="document.getElementById('profile-photo-viewer').classList.remove('open');document.getElementById('profile-photo-viewer').style.display='none';document.body.classList.remove('profile-photo-open')">&times;</button><img id="profile-photo-viewer-img" alt="Foto de perfil ampliada"></div>
 <div class="pl-watermark"><img src="https://i.ibb.co/RTLRRmMg/image-removebg-preview.png" alt="Nuevo icono oficial Premier OSM League"></div>
 <div class="lightbox" id="visor" onclick="cerrarLightbox()"><button class="close" onclick="event.stopPropagation();cerrarLightbox()">&times;</button><div class="social-viewer" onclick="event.stopPropagation()"><img id="img-ampliada" alt="Imagen ampliada"><aside class="social-panel" id="social-panel"></aside></div><div class="video-ampliado" onclick="event.stopPropagation()"><iframe loading="lazy" id="video-ampliado" title="Vídeo ampliado" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe></div></div>
 <header><img class="brand-icon" src="https://i.ibb.co/RTLRRmMg/image-removebg-preview.png" alt="Nuevo icono oficial Premier OSM League"><h1>Premier OSM League</h1><p>Temporada 25/26 · Portal oficial</p></header>
@@ -1540,7 +1510,7 @@ function showBigLikeHeart(card){
  }catch(_){ }
 }
 window.showBigLikeHeart=showBigLikeHeart;
-function openMiniProfile(profile={}){const p={name:profile.name||'Entrenador anónimo',club:profile.club||'Sin club',avatar:profile.photo||profile.avatar||DEFAULT_AVATAR};let viewer=document.getElementById('mini-profile-viewer');if(!viewer){viewer=document.createElement('div');viewer.id='mini-profile-viewer';viewer.className='mini-profile-viewer';viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.classList.remove('open')});document.body.appendChild(viewer)}viewer.innerHTML=`<div class="mini-profile-card"><button type="button" class="mini-profile-close" onclick="document.getElementById('mini-profile-viewer').classList.remove('open')">&times;</button><img class="mini-profile-avatar" src="${p.avatar}" alt="Foto de perfil"><h3></h3><div class="mini-club"></div><div class="mini-profile-info"><div><b>Perfil</b>Entrenador</div><div><b>Club/Rol</b><span class="mini-club-value"></span></div></div></div>`;viewer.querySelector('h3').textContent=p.name;viewer.querySelector('.mini-club').textContent=p.club;viewer.querySelector('.mini-club-value').textContent=p.club;viewer.querySelector('.mini-profile-avatar').addEventListener('click',()=>{const pv=document.getElementById('profile-photo-viewer'),pi=document.getElementById('profile-photo-viewer-img');if(pv&&pi){pi.src=p.avatar;pv.classList.add('open')}});viewer.classList.add('open')}
+function openMiniProfile(profile={}){const p={name:profile.name||'Entrenador anónimo',club:profile.club||'Sin club',avatar:profile.photo||profile.avatar||DEFAULT_AVATAR};let viewer=document.getElementById('mini-profile-viewer');if(!viewer){viewer=document.createElement('div');viewer.id='mini-profile-viewer';viewer.className='mini-profile-viewer';viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.classList.remove('open')});document.body.appendChild(viewer)}viewer.innerHTML=`<div class="mini-profile-card"><button type="button" class="mini-profile-close" onclick="document.getElementById('mini-profile-viewer').classList.remove('open')">&times;</button><img class="mini-profile-avatar" src="${p.avatar}" alt="Foto de perfil"><h3></h3><div class="mini-club"></div><div class="mini-profile-info"><div><b>Perfil</b>Entrenador</div><div><b>Club/Rol</b><span class="mini-club-value"></span></div></div></div>`;viewer.querySelector('h3').textContent=p.name;viewer.querySelector('.mini-club').textContent=p.club;viewer.querySelector('.mini-club-value').textContent=p.club;viewer.querySelector('.mini-profile-avatar').addEventListener('click',(e)=>{e.preventDefault();e.stopPropagation();if(e.stopImmediatePropagation)e.stopImmediatePropagation();if(window.openProfilePhotoFront){window.openProfilePhotoFront(p.avatar)}else{const pv=document.getElementById('profile-photo-viewer'),pi=document.getElementById('profile-photo-viewer-img');if(pv&&pi){pi.src=p.avatar;pv.style.zIndex='2147483000';document.body.appendChild(pv);document.body.classList.add('profile-photo-open');pv.classList.add('open')}}});viewer.classList.add('open')}
 window.openMiniProfile=openMiniProfile;
 
 async function crearNotificacion(ownerId,payload={}){
@@ -1627,7 +1597,7 @@ function renderSocialPanel(id,f){
  panel.innerHTML='';
  const head=document.createElement('div');head.className='social-panel-head';head.innerHTML=`<img src="${author.avatar||DEFAULT_AVATAR}" alt="Autor"><div><b>${author.name||'Entrenador anónimo'}</b><br><span style="color:var(--pl-cyan);font-weight:900">${author.club||'Sin club'}</span></div>`;head.addEventListener('click',()=>openMiniProfile({name:author.name,club:author.club,avatar:author.photo||author.avatar}));panel.appendChild(head);
  if(titleText){const title=document.createElement('div');title.className='social-panel-title title-edit-row';const span=document.createElement('span');span.textContent=titleText;title.appendChild(span);if(canManage){const edit=document.createElement('button');edit.type='button';edit.className='inline-title-edit';edit.title='Editar título';edit.textContent='✏️';edit.addEventListener('click',ev=>{ev.stopPropagation();window.editarTituloPublicacion(id,titleText)});title.appendChild(edit)}panel.appendChild(title)}else if(canManage){const holder=document.createElement('div');holder.className='title-placeholder-edit';const edit=document.createElement('button');edit.type='button';edit.className='inline-title-edit';edit.textContent='✏️ Añadir título';edit.addEventListener('click',()=>window.editarTituloPublicacion(id,''));holder.appendChild(edit);panel.appendChild(holder)}
- const actions=document.createElement('div');actions.className='social-panel-actions';actions.innerHTML=`<div class="post-actions"><button type="button" class="react-btn ${liked?'active':''}" id="lb-like">❤️ ${likes.length}</button><a class="download-btn" download="${safeFileName(titleText||'publicacion-premier-osm')}.jpg" href="${f.src||'#'}">⬇️ Descargar</a></div>`;panel.appendChild(actions);
+ const actions=document.createElement('div');actions.className='social-panel-actions';actions.innerHTML=`<div class="post-actions"><button type="button" class="react-btn ${liked?'active':''}" id="lb-like">❤️ ${likes.length}</button><a class="download-btn" download="${safeFileName(titleText||'publicacion-premier-osm')}.jpg" href="${f.src||'#'}">⬇️ Descargar</a>${!author.id?'<button type="button" class="claim-btn" id="lb-claim">🏷️ Reclamar</button>':''}</div>`;panel.appendChild(actions);
  const visibleCount=contarComentariosVisibles(comments);const commentsTitle=document.createElement('div');commentsTitle.className='social-comments-title';commentsTitle.textContent=visibleCount===1?'1 comentario':`${visibleCount} comentarios`;panel.appendChild(commentsTitle);
  const list=document.createElement('div');list.className='social-panel-comments';panel.appendChild(list);
  const formWrap=document.createElement('div');formWrap.className='social-panel-actions comment-form-wrap';
@@ -1636,9 +1606,9 @@ function renderSocialPanel(id,f){
  const setReplyTarget=(c)=>{replyTarget=c;replyHint.querySelector('span').textContent='Respondiendo a '+(c.name||'Entrenador');replyHint.classList.add('show');inp.focus()};
  replyHint.querySelector('button').addEventListener('click',()=>{replyTarget=null;replyHint.classList.remove('show')});
  if(!visibleCount){list.innerHTML='<div class="social-empty">Todavía no hay comentarios. Sé el primero en comentar.</div>'}else{comments.filter(c=>!c.parentId).sort((a,b)=>(a.fecha||0)-(b.fecha||0)).forEach(c=>list.appendChild(renderComment(c,id,comments,setReplyTarget)))}
- const form=document.createElement('div');form.className='comment-form';const inp=document.createElement('input');inp.className='input';inp.placeholder='Añade un comentario...';inp.maxLength=220;const send=document.createElement('button');send.className='btn';send.type='button';send.textContent='Publicar';const submit=()=>{window.addComment(id,inp.value,replyTarget?replyTarget.id:null);inp.value='';replyTarget=null;replyHint.classList.remove('show')};send.addEventListener('click',submit);inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')submit()});form.append(inp,send);formWrap.appendChild(form);panel.appendChild(formWrap);panel.querySelector('#lb-like')?.addEventListener('click',()=>window.toggleLike(id))
+ const form=document.createElement('div');form.className='comment-form';const inp=document.createElement('input');inp.className='input';inp.placeholder='Escribe un mensaje...';inp.maxLength=220;const send=document.createElement('button');send.className='btn send-message-btn';send.type='button';send.innerHTML='📨 Enviar';send.className='btn send-message-btn';send.setAttribute('aria-label','Enviar mensaje');send.title='Enviar mensaje';const submit=()=>{window.addComment(id,inp.value,replyTarget?replyTarget.id:null);inp.value='';replyTarget=null;replyHint.classList.remove('show')};send.addEventListener('click',submit);inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')submit()});form.append(inp,send);formWrap.appendChild(form);panel.appendChild(formWrap);panel.querySelector('#lb-like')?.addEventListener('click',()=>window.toggleLike(id));panel.querySelector('#lb-claim')?.addEventListener('click',()=>window.reclamarPublicacion(id))
 }
-function openPostLightbox(src,id,f){currentLightboxPost=id;window.currentLightboxPost=id;const v=document.getElementById('visor'),img=document.getElementById('img-ampliada'),vid=document.getElementById('video-ampliado');v.classList.remove('video-mode');if(vid)vid.removeAttribute('src');img.style.display='block';img.alt=cleanPostTitle(f?.titulo)||'Imagen ampliada';img.src=src;renderSocialPanel(id,f||{});v.classList.add('social-mode','open');document.body.classList.add('lock')}
+function openPostLightbox(src,id,f){currentLightboxPost=id;window.currentLightboxPost=id;document.body.classList.add('social-lightbox-open');const v=document.getElementById('visor'),img=document.getElementById('img-ampliada'),vid=document.getElementById('video-ampliado');v.classList.remove('video-mode');if(vid)vid.removeAttribute('src');img.style.display='block';img.alt=cleanPostTitle(f?.titulo)||'Imagen ampliada';img.src=src;renderSocialPanel(id,f||{});v.classList.add('social-mode','open');document.body.classList.add('lock')}
 
 let activeCategory='memes';
 const state={memes:{loaded:false,loading:false},clubes:{loaded:false,loading:false},premier:{loaded:false,loading:false}};
@@ -1685,7 +1655,7 @@ function crearBotonMover(id,destino){
  b.addEventListener('click',()=>window.moverPublicacion(id,destino));
  return b;
 }
-function paint(g,f,id,prepend=false){const cat=f.categoria||'memes',likes=Array.isArray(f.likes)?f.likes:[],comments=Array.isArray(f.comments)?f.comments:[],liked=likes.includes(currentProfile().id),titleText=cleanPostTitle(f.titulo),author=f.author||{},canManage=(author.id===currentProfile().id)||!author.id;const card=document.createElement('div');card.className='imgcard card '+(!titleText?'post-no-title':'');card.dataset.id=id;if(canManage){const trash=document.createElement('button');trash.type='button';trash.className='trash';trash.textContent='🗑️';trash.addEventListener('click',()=>window.borrarFotoPrensaReal(id));card.appendChild(trash)}const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.src=f.src||'';img.alt=titleText||'Publicación sin título';img.className='zoomable';img.addEventListener('click',()=>openPostLightbox(img.src,id,f));const body=document.createElement('div');body.style.cssText='padding:15px;text-align:center;font-weight:bold';if(titleText||canManage){const row=document.createElement('div');row.className='card-title-row';if(titleText){const title=document.createElement('span');title.textContent=titleText;row.appendChild(title)}if(canManage){const edit=document.createElement('button');edit.type='button';edit.className='inline-title-edit';edit.title=titleText?'Editar título':'Añadir título';edit.textContent='✏️';edit.addEventListener('click',ev=>{ev.stopPropagation();window.editarTituloPublicacion(id,titleText)});row.appendChild(edit)}body.appendChild(row)}const authorLine=document.createElement('div');authorLine.className='author-line';authorLine.innerHTML=`<img src="${author.avatar||DEFAULT_AVATAR}" alt="Autor"><span>${author.name||'Entrenador anónimo'} · ${author.club||'Sin club'}</span>`;authorLine.addEventListener('click',()=>openMiniProfile({name:author.name,club:author.club,avatar:author.photo||author.avatar}));body.appendChild(authorLine);const actions=document.createElement('div');actions.className='post-actions';const likeBtn=document.createElement('button');likeBtn.type='button';likeBtn.className='react-btn '+(liked?'active':'');likeBtn.textContent='❤️ '+likes.length;likeBtn.addEventListener('click',()=>window.toggleLike(id));const commentBtn=document.createElement('button');commentBtn.type='button';commentBtn.className='react-btn';commentBtn.textContent='💬 '+comments.length;commentBtn.addEventListener('click',()=>openPostLightbox(img.src,id,f));const dl=document.createElement('a');dl.className='download-btn';dl.href=f.src||'#';dl.download=safeFileName(titleText||'publicacion-premier-osm')+'.jpg';dl.textContent='⬇️ Descargar';actions.append(likeBtn,commentBtn,dl);body.appendChild(actions);const move=document.createElement('div');move.className='move';Object.keys(cats).filter(k=>k!==cat).forEach(k=>move.appendChild(crearBotonMover(id,k)));body.appendChild(move);card.append(img,body);prepend?g.prepend(card):g.appendChild(card)}
+function paint(g,f,id,prepend=false){const cat=f.categoria||'memes',likes=Array.isArray(f.likes)?f.likes:[],comments=Array.isArray(f.comments)?f.comments:[],liked=likes.includes(currentProfile().id),titleText=cleanPostTitle(f.titulo),author=f.author||{},isLegacy=!author.id,canManage=(author.id===currentProfile().id)||isLegacy;const card=document.createElement('div');card.className='imgcard card '+(!titleText?'post-no-title':'');card.dataset.id=id;if(canManage){const trash=document.createElement('button');trash.type='button';trash.className='trash';trash.textContent='🗑️';trash.addEventListener('click',()=>window.borrarFotoPrensaReal(id));card.appendChild(trash)}const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.src=f.src||'';img.alt=titleText||'Publicación sin título';img.className='zoomable';img.addEventListener('click',()=>openPostLightbox(img.src,id,f));const body=document.createElement('div');body.style.cssText='padding:15px;text-align:center;font-weight:bold';if(titleText||canManage){const row=document.createElement('div');row.className='card-title-row';if(titleText){const title=document.createElement('span');title.textContent=titleText;row.appendChild(title)}if(canManage){const edit=document.createElement('button');edit.type='button';edit.className='inline-title-edit';edit.title=titleText?'Editar título':'Añadir título';edit.textContent='✏️';edit.addEventListener('click',ev=>{ev.stopPropagation();window.editarTituloPublicacion(id,titleText)});row.appendChild(edit)}body.appendChild(row)}const authorLine=document.createElement('div');authorLine.className='author-line';authorLine.innerHTML=`<img src="${author.avatar||DEFAULT_AVATAR}" alt="Autor"><span>${author.name||'Entrenador anónimo'} · ${author.club||'Sin club'}</span>`;authorLine.addEventListener('click',()=>openMiniProfile({name:author.name,club:author.club,avatar:author.photo||author.avatar}));body.appendChild(authorLine);if(isLegacy){const legacy=document.createElement('div');legacy.className='legacy-author-warning';legacy.textContent='Publicación sin autor · puedes reclamarla';body.appendChild(legacy)}const actions=document.createElement('div');actions.className='post-actions';const likeBtn=document.createElement('button');likeBtn.type='button';likeBtn.className='react-btn '+(liked?'active':'');likeBtn.textContent='❤️ '+likes.length;likeBtn.addEventListener('click',()=>window.toggleLike(id));const commentBtn=document.createElement('button');commentBtn.type='button';commentBtn.className='react-btn';commentBtn.textContent='💬 '+comments.length;commentBtn.addEventListener('click',()=>openPostLightbox(img.src,id,f));const dl=document.createElement('a');dl.className='download-btn';dl.href=f.src||'#';dl.download=safeFileName(titleText||'publicacion-premier-osm')+'.jpg';dl.textContent='⬇️ Descargar';if(isLegacy){const claim=document.createElement('button');claim.type='button';claim.className='claim-btn';claim.textContent='🏷️ Reclamar';claim.addEventListener('click',()=>window.reclamarPublicacion(id));actions.append(likeBtn,commentBtn,claim,dl)}else{actions.append(likeBtn,commentBtn,dl)};body.appendChild(actions);const move=document.createElement('div');move.className='move';Object.keys(cats).filter(k=>k!==cat).forEach(k=>move.appendChild(crearBotonMover(id,k)));body.appendChild(move);card.append(img,body);prepend?g.prepend(card):g.appendChild(card)}
 async function cargarCategoria(cat,force=false){
  if(!cats[cat]||state[cat].loading)return;
  activeCategory=cat;
@@ -1716,6 +1686,55 @@ async function cargarCategoria(cat,force=false){
  state[cat].loading=false;
  }
 }
+
+function ensureClaimPostModal(){
+ let modal=document.getElementById('claim-post-modal');
+ if(modal)return modal;
+ modal=document.createElement('div');
+ modal.id='claim-post-modal';
+ modal.className='claim-post-modal';
+ modal.innerHTML=`<div class="claim-post-box"><button type="button" class="claim-post-close" id="claim-post-close">&times;</button><div class="claim-post-head"><div class="claim-post-icon">🏷️</div><div><h3>Reclamar publicación</h3><p>Vas a asignar esta publicación a tu perfil de entrenador.</p></div></div><div class="claim-post-preview" id="claim-post-preview"><img id="claim-post-img" alt="Vista previa de la publicación"></div><div class="claim-post-note"><b>Importante:</b> al reclamarla, aparecerás como autor y podrás gestionarla desde tu perfil.</div><div class="claim-post-actions"><button type="button" class="claim-post-cancel" id="claim-post-cancel">Cancelar</button><button type="button" class="claim-post-confirm" id="claim-post-confirm">Sí, reclamar</button></div><div class="claim-post-status" id="claim-post-status"></div></div>`;
+ document.body.appendChild(modal);
+ modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+ modal.querySelector('#claim-post-close').addEventListener('click',()=>modal.classList.remove('open'));
+ modal.querySelector('#claim-post-cancel').addEventListener('click',()=>modal.classList.remove('open'));
+ return modal;
+}
+function confirmarReclamarPublicacion(data={}){
+ return new Promise(resolve=>{
+  const modal=ensureClaimPostModal();
+  const preview=modal.querySelector('#claim-post-preview');
+  const img=modal.querySelector('#claim-post-img');
+  const status=modal.querySelector('#claim-post-status');
+  const ok=modal.querySelector('#claim-post-confirm');
+  const cancel=modal.querySelector('#claim-post-cancel');
+  const close=modal.querySelector('#claim-post-close');
+  status.textContent='';
+  if(data.src){img.src=data.src;preview.classList.add('show')}else{img.removeAttribute('src');preview.classList.remove('show')}
+  const clean=()=>{ok.onclick=null;cancel.onclick=null;close.onclick=null;modal.classList.remove('open')};
+  ok.onclick=()=>{status.textContent='Reclamando publicación...';clean();resolve(true)};
+  cancel.onclick=()=>{clean();resolve(false)};
+  close.onclick=()=>{clean();resolve(false)};
+  modal.classList.add('open');
+ });
+}
+window.reclamarPublicacion=async(id)=>{
+ if(!requireProfile())return;
+ try{
+  await initFirebase();
+  const p=currentProfile();
+  const ref=fb.doc(db,'noticias',id);
+  const snap=await fb.getDoc(ref);
+  if(!snap.exists()){alert('No se encontró la publicación.');return}
+  const data=snap.data()||{};
+  if(data.author&&data.author.id){alert('Esta publicación ya tiene autor.');return}
+  if(!await confirmarReclamarPublicacion(data))return;
+  await fb.updateDoc(ref,{author:{id:p.id,name:p.name,club:p.club,avatar:p.avatar,photo:p.photo},claimedAt:Date.now()});
+  Object.keys(state).forEach(k=>state[k].loaded=false);
+  await cargarCategoria(activeCategory,true);
+  if(window.currentLightboxPost===id){const fresh=await fb.getDoc(ref);if(fresh.exists())renderSocialPanel(id,fresh.data())}
+ }catch(e){console.error(e);alert('No se pudo reclamar la publicación')}
+};
 window.moverPublicacion=async(id,cat)=>{
  try{
  await initFirebase();
@@ -2005,7 +2024,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  const pill=document.getElementById('profile-pill'); if(pill)pill.addEventListener('click',()=>openProfileModal(false));
  const close=document.getElementById('close-profile-btn'), xclose=document.getElementById('profile-x-close'); if(close)close.addEventListener('click',closeProfileModal); if(xclose)xclose.addEventListener('click',closeProfileModal);
  const name=document.getElementById('profile-name'), club=document.getElementById('profile-club'), file=document.getElementById('profile-avatar-file');
- function openProfilePhoto(){const viewer=document.getElementById('profile-photo-viewer'),img=document.getElementById('profile-photo-viewer-img');if(viewer&&img){img.src=file?.dataset.photo||currentProfile().photo||file?.dataset.avatar||currentProfile().avatar||DEFAULT_AVATAR;viewer.classList.add('open')}}
+ function openProfilePhoto(){const src=file?.dataset.photo||currentProfile().photo||file?.dataset.avatar||currentProfile().avatar||DEFAULT_AVATAR;if(window.openProfilePhotoFront){window.openProfilePhotoFront(src)}else{const viewer=document.getElementById('profile-photo-viewer'),img=document.getElementById('profile-photo-viewer-img');if(viewer&&img){img.src=src;viewer.style.zIndex='2147483000';document.body.appendChild(viewer);document.body.classList.add('profile-photo-open');viewer.classList.add('open')}}}
  function updateClubChoices(){document.querySelectorAll('.club-choice').forEach(btn=>btn.classList.toggle('active',btn.dataset.club===(club?.value||'')))}
  function syncPreview(){paintProfilePreview({name:name.value||'Nuevo entrenador',club:club.value||'Sin club',avatar:file?.dataset.avatar||currentProfile().avatar,photo:file?.dataset.photo||currentProfile().photo||file?.dataset.avatar||currentProfile().avatar});updateClubChoices()}
  if(name)name.addEventListener('input',syncPreview); if(club)club.addEventListener('change',syncPreview);
@@ -2085,101 +2104,43 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 <script>
 (function(){
- function fixMusicButtonAndVolume(){
-  try{
-   const a=document.getElementById('bgm-audio');
-   if(a){a.volume=.55;a.muted=false;}
-   const b=document.getElementById('bgm-audio-btn');
-   if(b){
-    const playing=a&&!a.paused;
-    b.textContent=playing?'🔊 Música ON':'🔇 Música OFF';
-    b.classList.toggle('music-on',!!playing);
-    b.style.display='inline-flex';
-   }
-  }catch(_){ }
- }
- document.addEventListener('DOMContentLoaded',()=>{
-  fixMusicButtonAndVolume();
-  const b=document.getElementById('bgm-audio-btn');
-  const a=document.getElementById('bgm-audio');
-  if(b&&a){
-   b.addEventListener('click',()=>setTimeout(fixMusicButtonAndVolume,120),true);
-   a.addEventListener('play',fixMusicButtonAndVolume);
-   a.addEventListener('pause',fixMusicButtonAndVolume);
-   a.addEventListener('volumechange',()=>{try{if(a.volume<.75)a.volume=.55}catch(_){}});
-  }
-  setInterval(fixMusicButtonAndVolume,2500);
- });
+ const MUSIC_KEY='premier_osm_music_on_v3';
+ let lastHandled=0;
+ function audioEl(){return document.getElementById('bgm-audio')}
+ function btnEl(){return document.getElementById('bgm-audio-btn')}
+ function paintMusic(on){const b=btnEl();if(!b)return;b.textContent=on?'🔊 Música ON':'🔇 Música OFF';b.classList.toggle('music-on',!!on);b.classList.toggle('on',!!on);b.style.display='inline-flex';b.style.visibility='visible';b.style.opacity='1'}
+ async function forcePlay(){const a=audioEl();if(!a)return false;try{a.volume=.55;a.muted=false;a.loop=true;a.playsInline=true;await a.play();localStorage.setItem(MUSIC_KEY,'1');paintMusic(true);return true}catch(e){localStorage.setItem(MUSIC_KEY,'0');paintMusic(false);return false}}
+ function forcePause(){const a=audioEl();try{if(a)a.pause()}catch(_){}localStorage.setItem(MUSIC_KEY,'0');paintMusic(false)}
+ async function toggleMusic(ev){if(ev){ev.preventDefault();ev.stopPropagation();if(ev.stopImmediatePropagation)ev.stopImmediatePropagation()}const desiredOn=localStorage.getItem(MUSIC_KEY)!=='1';lastHandled=Date.now();if(desiredOn){await forcePlay()}else{forcePause()}}
+ function bind(){const b=btnEl(),a=audioEl();if(!b||b.dataset.musicFixed==='1')return;b.dataset.musicFixed='1';paintMusic(localStorage.getItem(MUSIC_KEY)==='1'&&a&&!a.paused);['pointerdown','touchstart','click'].forEach(type=>{b.addEventListener(type,function(ev){if(type==='click'&&Date.now()-lastHandled<450){ev.preventDefault();ev.stopPropagation();if(ev.stopImmediatePropagation)ev.stopImmediatePropagation();return}toggleMusic(ev)},true)});if(a){a.volume=.55;a.addEventListener('play',()=>paintMusic(true));a.addEventListener('pause',()=>paintMusic(false));a.addEventListener('volumechange',()=>{try{if(a.volume<.45)a.volume=.55}catch(_){}})}}
+ document.addEventListener('DOMContentLoaded',()=>{bind();setInterval(bind,1000)});
+ window.fixPremierMusicButton=bind;
 })();
 </script>
 
 
 <script>
 (function(){
- const MUSIC_KEY='premier_osm_music_on_v3';
- let lastHandled=0;
- function audioEl(){return document.getElementById('bgm-audio')}
- function btnEl(){return document.getElementById('bgm-audio-btn')}
- function paintMusic(on){
-  const b=btnEl();
-  if(!b)return;
-  b.textContent=on?'🔊 Música ON':'🔇 Música OFF';
-  b.classList.toggle('music-on',!!on);
-  b.classList.toggle('on',!!on);
-  b.style.display='inline-flex';
-  b.style.visibility='visible';
-  b.style.opacity='1';
- }
- async function forcePlay(){
-  const a=audioEl();
-  if(!a)return false;
-  try{
-   a.volume=.55;
-   a.muted=false;
-   a.loop=true;
-   a.playsInline=true;
-   await a.play();
-   localStorage.setItem(MUSIC_KEY,'1');
-   paintMusic(true);
-   return true;
-  }catch(e){
-   localStorage.setItem(MUSIC_KEY,'0');
-   paintMusic(false);
-   return false;
+ window.openProfilePhotoFront=function(src){
+  const pv=document.getElementById('profile-photo-viewer');
+  const pi=document.getElementById('profile-photo-viewer-img');
+  if(!pv||!pi)return;
+  pi.src=src||pi.src||'';
+  pv.style.zIndex='2147483000';
+  pv.style.display='flex';
+  document.body.appendChild(pv);
+  document.body.classList.add('profile-photo-open');
+  pv.classList.add('open');
+ };
+ document.addEventListener('click',function(e){
+  const pv=document.getElementById('profile-photo-viewer');
+  if(!pv)return;
+  if(e.target===pv||e.target.closest('.profile-photo-viewer button')){
+   pv.classList.remove('open');
+   pv.style.display='none';
+   document.body.classList.remove('profile-photo-open');
   }
- }
- function forcePause(){
-  const a=audioEl();
-  try{if(a)a.pause()}catch(_){ }
-  localStorage.setItem(MUSIC_KEY,'0');
-  paintMusic(false);
- }
- async function toggleMusic(ev){
-  if(ev){ev.preventDefault();ev.stopPropagation();if(ev.stopImmediatePropagation)ev.stopImmediatePropagation()}
-  const desiredOn=localStorage.getItem(MUSIC_KEY)!=='1';
-  lastHandled=Date.now();
-  if(desiredOn){await forcePlay()}else{forcePause()}
- }
- function bind(){
-  const b=btnEl(),a=audioEl();
-  if(!b||b.dataset.musicFixed==='1')return;
-  b.dataset.musicFixed='1';
-  paintMusic(localStorage.getItem(MUSIC_KEY)==='1' && a && !a.paused);
-  ['pointerdown','touchstart','click'].forEach(type=>{
-   b.addEventListener(type,function(ev){
-    if(type==='click'&&Date.now()-lastHandled<450){ev.preventDefault();ev.stopPropagation();if(ev.stopImmediatePropagation)ev.stopImmediatePropagation();return}
-    toggleMusic(ev);
-   },true);
-  });
-  if(a){
-   a.volume=.55;
-   a.addEventListener('play',()=>paintMusic(true));
-   a.addEventListener('pause',()=>paintMusic(false));
-   a.addEventListener('volumechange',()=>{try{if(a.volume<.45)a.volume=.55}catch(_){}});
-  }
- }
- document.addEventListener('DOMContentLoaded',()=>{bind();setInterval(bind,1000)});
- window.fixPremierMusicButton=bind;
+ },true);
 })();
 </script>
 
