@@ -1145,252 +1145,252 @@ body.profile-mini-mode.profile-pointer-near .profile-pill{
 
 /* ===== FIX DEFINITIVO: FOTO DE PERFIL AMPLIADA SIEMPRE DELANTE ===== */
 .profile-photo-viewer{position:fixed!important;inset:0!important;z-index:10000050!important;display:none;align-items:center!important;justify-content:center!important;background:rgba(0,0,0,.94)!important;padding:22px!important;isolation:isolate!important;pointer-events:none}
-.profile-photo-viewer.open{display:flex!important;pointer-events:auto!important}
-.profile-photo-viewer img{position:relative!important;z-index:10000051!important;max-width:92vw!important;max-height:90vh!important;object-fit:contain!important}
-.profile-photo-viewer button{z-index:10000052!important}.mini-profile-viewer{z-index:900000!important}
+.profile-photo-viewer.open{display:flex!important;pointer-events:auto!important}.profile-photo-viewer img{position:relative!important;z-index:10000051!important;max-width:92vw!important;max-height:90vh!important;object-fit:contain!important}.profile-photo-viewer button{z-index:10000052!important}.mini-profile-viewer{z-index:900000!important}
 
 
-/* ===== FIX MÚSICA MÓVIL: BOTÓN VISIBLE Y DESBLOQUEO POR TOQUE ===== */
-.bgm-audio-panel{display:block!important;visibility:visible!important;position:fixed!important;right:14px!important;bottom:84px!important;z-index:780500!important;pointer-events:auto!important}
-#bgm-audio-btn{border:1px solid rgba(0,255,135,.48)!important;background:linear-gradient(135deg,rgba(45,6,55,.96),rgba(22,0,29,.96))!important;color:var(--pl-green)!important;border-radius:999px!important;padding:11px 14px!important;font-weight:1000!important;cursor:pointer!important;box-shadow:0 12px 28px rgba(0,0,0,.45),0 0 18px rgba(0,255,135,.16)!important}
-#bgm-audio-btn.music-on{background:linear-gradient(135deg,var(--pl-green),var(--pl-cyan))!important;color:#16001d!important;border-color:transparent!important}.music-mobile-hint{position:fixed!important;right:14px!important;bottom:138px!important;z-index:780501!important;max-width:min(88vw,310px)!important;padding:11px 13px!important;border-radius:15px!important;background:rgba(0,0,0,.84)!important;border:1px solid rgba(0,255,135,.35)!important;color:#fff!important;font-weight:900!important;font-size:.84rem!important;display:none!important}.music-mobile-hint.show{display:block!important}@media(max-width:740px){.bgm-audio-panel{right:10px!important;bottom:78px!important}#bgm-audio-btn{padding:10px 12px!important;font-size:.82rem!important}.music-mobile-hint{right:10px!important;bottom:128px!important;font-size:.80rem!important}}
+/* ===== FIX COMENTARIO PROPIO + UI FINAL ===== */
+.imgcard .trash{display:flex!important;align-items:center!important;justify-content:center!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;z-index:40!important}.comment.comment-just-added{outline:2px solid rgba(0,255,135,.75)!important;box-shadow:0 0 20px rgba(0,255,135,.20)!important}.social-panel-comments{scroll-behavior:auto!important;overflow-anchor:none!important}.claim-btn{border:1px solid rgba(235,255,0,.45)!important;background:rgba(235,255,0,.12)!important;color:var(--pl-lime)!important;border-radius:999px!important;padding:10px 14px!important;font-weight:1000!important;cursor:pointer!important;display:inline-flex!important;align-items:center!important;gap:7px!important}.legacy-author-warning{margin:8px auto 10px!important;padding:8px 11px!important;border-radius:13px!important;background:rgba(235,255,0,.10)!important;border:1px solid rgba(235,255,0,.25)!important;color:var(--pl-lime)!important;font-size:.78rem!important;font-weight:1000!important;max-width:92%!important}.send-message-btn{min-width:124px!important;height:46px!important;border-radius:15px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;white-space:nowrap!important;background:linear-gradient(135deg,var(--pl-green),var(--pl-cyan))!important;color:#16001d!important}.claim-post-modal{position:fixed;inset:0;z-index:940000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px)}.claim-post-modal.open{display:flex}.claim-post-box{width:min(92vw,520px);border-radius:26px;background:linear-gradient(145deg,rgba(22,0,29,.98),rgba(58,5,72,.96));border:1px solid rgba(0,255,135,.45);box-shadow:0 28px 80px rgba(0,0,0,.68),0 0 34px rgba(0,255,135,.14);padding:22px;position:relative;color:#fff;overflow:hidden}.claim-post-box:before{content:'';position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--pl-lime),var(--pl-green),var(--pl-cyan))}.claim-post-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:1.45rem;font-weight:1000;cursor:pointer}.claim-post-head{display:flex;gap:14px;align-items:center;margin-right:44px;margin-bottom:12px}.claim-post-icon{width:52px;height:52px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:rgba(235,255,0,.14);border:1px solid rgba(235,255,0,.34);font-size:1.55rem;flex:0 0 52px}.claim-post-preview{margin:16px 0;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.22);display:none}.claim-post-preview.show{display:block}.claim-post-preview img{width:100%;max-height:220px;object-fit:cover;display:block}.claim-post-note{margin:12px 0 0;padding:11px 13px;border-radius:15px;background:rgba(0,255,135,.09);border:1px solid rgba(0,255,135,.20);color:#f2e8f6;font-weight:900;line-height:1.35}.claim-post-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:16px}.claim-post-actions button{border:0;border-radius:14px;padding:12px 16px;font-weight:1000;cursor:pointer}.claim-post-cancel{background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.14)!important}.claim-post-confirm{background:linear-gradient(135deg,var(--pl-lime),var(--pl-green));color:#16001d}@media(max-width:740px){.comment-form{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:7px!important}.send-message-btn{min-width:92px!important;height:44px!important;padding:0 11px!important;font-size:.74rem!important}.social-panel-comments .comment-head{grid-template-columns:30px minmax(0,1fr) auto!important;grid-template-areas:"avatar author del" "avatar date del"!important}.social-panel-comments .comment-author-click{white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}.social-panel-comments .comment-text{font-size:.91rem!important;line-height:1.28!important}}
 
 
-/* ===== RECLAMAR PUBLICACIONES SIN AUTOR + COMENTARIOS MÓVIL MEJORADOS ===== */
-.claim-btn{border:1px solid rgba(235,255,0,.45)!important;background:rgba(235,255,0,.12)!important;color:var(--pl-lime)!important;border-radius:999px!important;padding:10px 14px!important;font-weight:1000!important;cursor:pointer!important;display:inline-flex!important;align-items:center!important;gap:7px!important}.claim-btn:hover{background:linear-gradient(135deg,var(--pl-lime),var(--pl-green))!important;color:#16001d!important;border-color:transparent!important}.legacy-author-warning{margin:8px auto 10px!important;padding:8px 11px!important;border-radius:13px!important;background:rgba(235,255,0,.10)!important;border:1px solid rgba(235,255,0,.25)!important;color:var(--pl-lime)!important;font-size:.78rem!important;font-weight:1000!important;max-width:92%!important}.comment.comment-just-added{outline:2px solid rgba(0,255,135,.75)!important;box-shadow:0 0 20px rgba(0,255,135,.20)!important}.social-panel-comments{scroll-behavior:auto!important;overflow-anchor:none!important}
-@media(max-width:740px){.lightbox.social-mode .social-panel{max-height:58vh!important}.lightbox.social-mode .social-panel-comments{max-height:34vh!important;padding:8px 10px 12px!important;gap:8px!important}.social-panel-comments .comment,.social-panel-comments .comment.reply{padding:10px 10px!important;border-radius:15px!important}.social-panel-comments .comment-head,.social-panel-comments .comment.reply .comment-head{display:grid!important;grid-template-columns:30px minmax(0,1fr) auto!important;grid-template-areas:"avatar author del" "avatar date del"!important;column-gap:8px!important;row-gap:2px!important;align-items:center!important;margin-bottom:7px!important}.social-panel-comments .comment-head img{grid-area:avatar!important;width:30px!important;height:30px!important;min-width:30px!important;max-width:30px!important;min-height:30px!important;max-height:30px!important}.social-panel-comments .comment-author-click{grid-area:author!important;font-size:.86rem!important;line-height:1.08!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;min-width:0!important}.social-panel-comments .comment-date{grid-area:date!important;font-size:.66rem!important;line-height:1!important;margin:0!important;white-space:nowrap!important}.social-panel-comments .comment-del{grid-area:del!important;padding:6px 8px!important;font-size:.64rem!important;max-width:70px!important}.social-panel-comments .comment-text,.social-panel-comments .comment.reply .comment-text{margin-left:38px!important;max-width:calc(100% - 38px)!important;font-size:.91rem!important;line-height:1.28!important}.social-panel-comments .comment-actions-row,.social-panel-comments .comment.reply .comment-actions-row{margin-left:38px!important;max-width:calc(100% - 38px)!important;margin-top:7px!important}.comment-reply-btn{padding:5px 9px!important;font-size:.68rem!important}.social-panel-comments .comment-replies{margin:10px 0 0 12px!important;padding-left:8px!important;max-width:calc(100% - 12px)!important}.comment-form-wrap{padding:10px!important}.comment-form{display:flex!important;flex-direction:row!important;align-items:center!important;gap:7px!important}.comment-form input{height:42px!important;min-height:42px!important;font-size:.86rem!important;padding:0 10px!important}.comment-form button{height:42px!important;min-width:86px!important;width:auto!important;padding:0 10px!important;font-size:.72rem!important}.reply-hint{font-size:.76rem!important;padding:7px 9px!important}.social-panel-actions .post-actions{gap:6px!important;flex-wrap:wrap!important}.react-btn,.download-btn,.claim-btn{padding:8px 10px!important;font-size:.74rem!important}.legacy-author-warning{font-size:.72rem!important;padding:7px 9px!important}}
-
-
-/* ===== BOTÓN ENVIAR MENSAJE: MÁS CLARO Y CÓMODO EN MÓVIL ===== */
-.send-message-btn{
-  min-width:124px!important;
-  height:46px!important;
-  border-radius:15px!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:6px!important;
-  white-space:nowrap!important;
-  background:linear-gradient(135deg,var(--pl-green),var(--pl-cyan))!important;
-  color:#16001d!important;
-  box-shadow:0 10px 22px rgba(0,255,135,.18)!important;
-}
-.send-message-btn:active{
-  transform:scale(.98)!important;
-}
-.comment-form input{
-  padding-right:12px!important;
-}
+/* ===== FIX MÓVIL VISOR SOCIAL: COMENTARIOS SIN CORTARSE NI TAPARSE ===== */
 @media(max-width:740px){
-  .comment-form-wrap{
-    padding:9px 10px 11px!important;
+  body.lock{
+    overflow:hidden!important;
   }
-  .comment-form{
+  body.lock .bgm-audio-panel,
+  body.lock .music-mobile-hint,
+  body.lock .notify-fab,
+  body.lock .notify-panel{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  .lightbox.social-mode{
+    padding:0!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    overflow:hidden!important;
+    background:rgba(0,0,0,.96)!important;
+  }
+  .lightbox.social-mode .social-viewer{
+    width:100vw!important;
+    height:100dvh!important;
+    max-height:100dvh!important;
+    min-height:100dvh!important;
+    border:0!important;
+    border-radius:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    grid-template-columns:none!important;
+    overflow:hidden!important;
+    background:#120018!important;
+  }
+  .lightbox.social-mode #img-ampliada{
+    width:100%!important;
+    height:34dvh!important;
+    max-height:34dvh!important;
+    min-height:190px!important;
+    flex:0 0 34dvh!important;
+    object-fit:contain!important;
+    background:#050006!important;
+    border:0!important;
+    border-radius:0!important;
+  }
+  .lightbox.social-mode .social-panel{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    height:auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+    border-top:1px solid rgba(0,255,135,.30)!important;
+  }
+  .lightbox.social-mode .social-panel-head{
+    flex:0 0 auto!important;
+    padding:10px 12px!important;
+    gap:9px!important;
+  }
+  .lightbox.social-mode .social-panel-head img{
+    width:42px!important;
+    height:42px!important;
+  }
+  .lightbox.social-mode .social-panel-title,
+  .lightbox.social-mode .title-placeholder-edit{
+    flex:0 0 auto!important;
+    padding:10px 12px!important;
+    font-size:.98rem!important;
+    line-height:1.22!important;
+  }
+  .lightbox.social-mode .social-panel-actions{
+    flex:0 0 auto!important;
+    padding:9px 10px!important;
+  }
+  .lightbox.social-mode .social-panel-actions .post-actions{
+    gap:7px!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+  }
+  .lightbox.social-mode .react-btn,
+  .lightbox.social-mode .download-btn,
+  .lightbox.social-mode .claim-btn{
+    padding:8px 10px!important;
+    font-size:.76rem!important;
+    min-height:38px!important;
+  }
+  .lightbox.social-mode .social-comments-title{
+    flex:0 0 auto!important;
+    padding:9px 12px 7px!important;
+    font-size:.96rem!important;
+  }
+  .lightbox.social-mode .social-panel-comments{
+    flex:1 1 auto!important;
+    min-height:120px!important;
+    max-height:none!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    padding:8px 10px 12px!important;
+    gap:8px!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+  .lightbox.social-mode .comment,
+  .lightbox.social-mode .comment.reply{
+    padding:10px 10px!important;
+    border-radius:15px!important;
+    margin:0!important;
+  }
+  .lightbox.social-mode .comment-head,
+  .lightbox.social-mode .comment.reply .comment-head{
+    display:grid!important;
+    grid-template-columns:32px minmax(0,1fr) auto!important;
+    grid-template-areas:
+      "avatar author del"
+      "avatar date del"!important;
+    column-gap:9px!important;
+    row-gap:2px!important;
+    align-items:center!important;
+    margin-bottom:7px!important;
+  }
+  .lightbox.social-mode .comment-head img{
+    grid-area:avatar!important;
+    width:32px!important;
+    height:32px!important;
+    min-width:32px!important;
+    max-width:32px!important;
+    min-height:32px!important;
+    max-height:32px!important;
+  }
+  .lightbox.social-mode .comment-author-click{
+    grid-area:author!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    font-size:.88rem!important;
+    line-height:1.08!important;
+    min-width:0!important;
+  }
+  .lightbox.social-mode .comment-date{
+    grid-area:date!important;
+    margin:0!important;
+    font-size:.66rem!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  .lightbox.social-mode .comment-del{
+    grid-area:del!important;
+    max-width:72px!important;
+    padding:6px 8px!important;
+    font-size:.66rem!important;
+  }
+  .lightbox.social-mode .comment-text,
+  .lightbox.social-mode .comment.reply .comment-text{
+    margin-left:41px!important;
+    max-width:calc(100% - 41px)!important;
+    font-size:.92rem!important;
+    line-height:1.28!important;
+  }
+  .lightbox.social-mode .comment-actions-row,
+  .lightbox.social-mode .comment.reply .comment-actions-row{
+    margin-left:41px!important;
+    max-width:calc(100% - 41px)!important;
+    margin-top:7px!important;
+  }
+  .lightbox.social-mode .comment-replies{
+    margin:9px 0 0 12px!important;
+    padding-left:8px!important;
+    max-width:calc(100% - 12px)!important;
+  }
+  .lightbox.social-mode .comment-form-wrap{
+    flex:0 0 auto!important;
+    position:relative!important;
+    bottom:auto!important;
+    z-index:5!important;
+    padding:9px 10px calc(10px + env(safe-area-inset-bottom))!important;
+    background:linear-gradient(180deg,rgba(22,0,29,.96),#16001d)!important;
+    border-top:1px solid rgba(255,255,255,.10)!important;
+  }
+  .lightbox.social-mode .comment-form{
     display:grid!important;
     grid-template-columns:minmax(0,1fr) auto!important;
     gap:7px!important;
     align-items:center!important;
   }
-  .comment-form input{
-    height:44px!important;
-    min-height:44px!important;
-    font-size:.88rem!important;
+  .lightbox.social-mode .comment-form input{
+    width:100%!important;
+    height:42px!important;
+    min-height:42px!important;
     margin:0!important;
-  }
-  .send-message-btn{
-    min-width:92px!important;
-    height:44px!important;
-    padding:0 11px!important;
-    font-size:.74rem!important;
+    font-size:.86rem!important;
     border-radius:14px!important;
+  }
+  .lightbox.social-mode .send-message-btn{
+    min-width:82px!important;
+    height:42px!important;
+    padding:0 10px!important;
+    font-size:.72rem!important;
+    border-radius:14px!important;
+  }
+  .lightbox.social-mode .reply-hint{
+    margin-bottom:7px!important;
+    padding:7px 9px!important;
+    font-size:.76rem!important;
+  }
+  .lightbox.social-mode .close{
+    position:fixed!important;
+    top:calc(env(safe-area-inset-top) + 10px)!important;
+    right:12px!important;
+    z-index:10000060!important;
+    width:48px!important;
+    height:48px!important;
+    border-radius:999px!important;
+    background:rgba(0,0,0,.42)!important;
+    font-size:2.4rem!important;
+    line-height:1!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
   }
 }
 @media(max-width:380px){
-  .send-message-btn{
-    min-width:48px!important;
-    width:48px!important;
-    padding:0!important;
-    font-size:0!important;
+  .lightbox.social-mode #img-ampliada{
+    height:30dvh!important;
+    flex-basis:30dvh!important;
+    min-height:160px!important;
   }
-  .send-message-btn::before{
+  .lightbox.social-mode .send-message-btn{
+    min-width:46px!important;
+    width:46px!important;
+    font-size:0!important;
+    padding:0!important;
+  }
+  .lightbox.social-mode .send-message-btn::before{
     content:'📨';
     font-size:1.05rem!important;
   }
 }
 
-
-/* ===== FIX NOTIFICACIONES: VISIBLES, CON ESTADO Y AVISO DEL NAVEGADOR ===== */
-.notify-fab{
-  display:flex!important;
-  visibility:visible!important;
-  opacity:1!important;
-  pointer-events:auto!important;
-  z-index:980500!important;
-}
-.notify-panel{
-  z-index:980501!important;
-}
-.notify-status-line{
-  margin:10px 12px 0!important;
-  padding:9px 11px!important;
-  border-radius:14px!important;
-  background:rgba(0,255,135,.09)!important;
-  border:1px solid rgba(0,255,135,.22)!important;
-  color:#eadcf0!important;
-  font-size:.80rem!important;
-  font-weight:900!important;
-  line-height:1.3!important;
-}
-.notify-status-line.err{
-  background:rgba(233,0,82,.12)!important;
-  border-color:rgba(233,0,82,.30)!important;
-  color:#ffd7e4!important;
-}
-.notify-status-line b{color:var(--pl-green)!important}
-@media(max-width:740px){
-  .notify-fab{right:12px!important;bottom:12px!important}
-  .notify-panel{right:8px!important;left:8px!important;bottom:76px!important;width:auto!important}
-}
-
-
-/* ===== OCULTAR COMENTARIO/AVISO DE MODO COMPATIBLE EN NOTIFICACIONES ===== */
-#notify-status-line,
-.notify-status-line{
-  display:none!important;
-  visibility:hidden!important;
-  opacity:0!important;
-  height:0!important;
-  min-height:0!important;
-  max-height:0!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  overflow:hidden!important;
-  pointer-events:none!important;
-}
-
-
-/* ===== MODAL BONITO PARA RECLAMAR PUBLICACIÓN ===== */
-.claim-post-modal{
-  position:fixed;
-  inset:0;
-  z-index:940000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-  background:rgba(0,0,0,.78);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-}
-.claim-post-modal.open{display:flex}
-.claim-post-box{
-  width:min(92vw,520px);
-  border-radius:26px;
-  background:linear-gradient(145deg,rgba(22,0,29,.98),rgba(58,5,72,.96));
-  border:1px solid rgba(0,255,135,.45);
-  box-shadow:0 28px 80px rgba(0,0,0,.68),0 0 34px rgba(0,255,135,.14);
-  padding:22px;
-  position:relative;
-  color:#fff;
-  overflow:hidden;
-}
-.claim-post-box:before{
-  content:'';
-  position:absolute;
-  inset:0 0 auto 0;
-  height:4px;
-  background:linear-gradient(90deg,var(--pl-lime),var(--pl-green),var(--pl-cyan));
-}
-.claim-post-close{
-  position:absolute;
-  top:14px;
-  right:14px;
-  width:36px;
-  height:36px;
-  border:0;
-  border-radius:999px;
-  background:rgba(255,255,255,.08);
-  color:#fff;
-  font-size:1.45rem;
-  font-weight:1000;
-  cursor:pointer;
-}
-.claim-post-close:hover{background:rgba(233,0,82,.90)}
-.claim-post-head{display:flex;gap:14px;align-items:center;margin-right:44px;margin-bottom:12px}
-.claim-post-icon{
-  width:52px;
-  height:52px;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(235,255,0,.14);
-  border:1px solid rgba(235,255,0,.34);
-  font-size:1.55rem;
-  flex:0 0 52px;
-}
-.claim-post-box h3{margin:0;color:#fff;font-size:1.25rem;line-height:1.15}
-.claim-post-box p{margin:6px 0 0;color:#eadcf0;line-height:1.45;font-weight:800}
-.claim-post-preview{
-  margin:16px 0;
-  border-radius:18px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(0,0,0,.22);
-  display:none;
-}
-.claim-post-preview.show{display:block}
-.claim-post-preview img{width:100%;max-height:220px;object-fit:cover;display:block}
-.claim-post-note{
-  margin:12px 0 0;
-  padding:11px 13px;
-  border-radius:15px;
-  background:rgba(0,255,135,.09);
-  border:1px solid rgba(0,255,135,.20);
-  color:#f2e8f6;
-  font-weight:900;
-  line-height:1.35;
-}
-.claim-post-note b{color:var(--pl-green)}
-.claim-post-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:16px}
-.claim-post-actions button{
-  border:0;
-  border-radius:14px;
-  padding:12px 16px;
-  font-weight:1000;
-  cursor:pointer;
-}
-.claim-post-cancel{
-  background:rgba(255,255,255,.09);
-  color:#fff;
-  border:1px solid rgba(255,255,255,.14)!important;
-}
-.claim-post-confirm{
-  background:linear-gradient(135deg,var(--pl-lime),var(--pl-green));
-  color:#16001d;
-  box-shadow:0 10px 22px rgba(0,255,135,.22);
-}
-.claim-post-status{min-height:20px;margin-top:10px;color:var(--pl-green);font-weight:1000}
-@media(max-width:740px){
-  .claim-post-box{padding:20px;border-radius:22px}
-  .claim-post-actions{justify-content:stretch}
-  .claim-post-actions button{flex:1 1 140px}
-  .claim-post-head{align-items:flex-start}
-}
-
-
-/* ===== FIX BORRAR PUBLICACIÓN PROPIA: PAPELERA VISIBLE SI ERES AUTOR ===== */
-.imgcard .trash{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  opacity:1!important;
-  visibility:visible!important;
-  pointer-events:auto!important;
-  z-index:40!important;
-}
-
+@media(max-width:740px){body.social-lightbox-open .bgm-audio-panel,body.social-lightbox-open .music-mobile-hint,body.social-lightbox-open .notify-fab,body.social-lightbox-open .notify-panel{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}}
 </style></head><body class="light-purple-theme">
 <div class="progress" id="progress"></div><div class="orb1"></div><div class="orb2"></div><button class="totop" id="totop" type="button" aria-label="Subir arriba">↑</button>
 <button class="sound-toggle off" id="sound-toggle" type="button" title="Activar o desactivar sonido">🔇 Sonido OFF</button><div class="sound-hint" id="sound-hint">Pulsa “Sonido OFF” o toca la página una vez para permitir el sonido de novedades.</div><div class="new-toast" id="new-toast" role="status" aria-live="polite"></div>
@@ -1586,12 +1586,11 @@ window.openMiniProfile=openMiniProfile;
 
 async function crearNotificacion(ownerId,payload={}){
  try{
-  if(!ownerId||ownerId===currentProfile().id)return false;
+  if(!ownerId||ownerId===currentProfile().id)return;
   await initFirebase();
   const actor=currentProfile();
-  await fb.addDoc(notificaciones,{ownerId,ownerName:payload.ownerName||'',actorId:actor.id,actorName:actor.name,actorClub:actor.club,actorAvatar:actor.avatar,type:payload.type||'info',postId:payload.postId||'',postTitle:payload.postTitle||'',commentId:payload.commentId||'',text:(payload.text||'').slice(0,180),read:false,fecha:Date.now(),createdAt:fb.serverTimestamp()});
-  return true;
- }catch(e){console.warn('No se pudo crear notificación',e);return false}
+  await fb.addDoc(notificaciones,{ownerId,actorId:actor.id,actorName:actor.name,actorClub:actor.club,actorAvatar:actor.avatar,type:payload.type||'info',postId:payload.postId||'',postTitle:payload.postTitle||'',commentId:payload.commentId||'',text:(payload.text||'').slice(0,180),read:false,fecha:Date.now(),createdAt:fb.serverTimestamp()});
+ }catch(e){console.warn('No se pudo crear notificación',e)}
 }
 function textoNotificacion(n){
  const name=n.actorName||'Alguien';
@@ -1607,88 +1606,27 @@ function showNotifyToast(text){
  if(!t){t=document.createElement('div');t.id='notify-toast';t.className='notify-toast';document.body.appendChild(t)}
  t.textContent=text;t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),4200);
 }
-function setNotifyStatus(msg,type=''){
- const line=document.getElementById('notify-status-line');if(line)line.remove();
-}
-function browserNotifyAllowed(){return 'Notification' in window&&Notification.permission==='granted'}
-async function requestBrowserNotifications(){
- try{if(!('Notification' in window))return false;if(Notification.permission==='granted')return true;if(Notification.permission==='denied')return false;const res=await Notification.requestPermission();return res==='granted'}catch(_){return false}
-}
-function showBrowserNotification(n){
- try{if(!browserNotifyAllowed())return;const title='Premier OSM League';const body=textoNotificacion(n);const notification=new Notification(title,{body,icon:(n.actorAvatar||document.querySelector('link[rel="icon"]')?.href||'')});notification.onclick=()=>{window.focus();notification.close();document.getElementById('notify-panel')?.classList.add('open')}}catch(_){ }
-}
-let userNotifUnsub=null,userNotifFirst=true,userNotifs=[],compatNotifUnsub=null,compatNotifMode=false;
-function notifReadKey(){return 'premier_notif_read_v4_'+(currentProfile().id||'anon')}
-function getNotifReadMap(){try{return JSON.parse(localStorage.getItem(notifReadKey())||'{}')||{}}catch(_){return {}}}
-function saveNotifReadMap(map){try{localStorage.setItem(notifReadKey(),JSON.stringify(map||{}))}catch(_){}}
-function setNotifBadge(){const unread=userNotifs.filter(n=>!n.read).length;const badge=document.getElementById('notify-badge');if(badge){badge.textContent=unread>99?'99+':String(unread);badge.classList.toggle('show',unread>0)}}
-function notifSafeText(v){return String(v||'').replace(/[<>&]/g,'')}
-function buildCompatNotificationsFromDocs(docs=[]){
- const me=currentProfile().id,readMap=getNotifReadMap(),arr=[];
- docs.forEach(x=>{
-  const postId=x.id,data=x.data||{},title=cleanPostTitle(data.titulo),author=data.author||{},comments=Array.isArray(data.comments)?data.comments:[],likes=Array.isArray(data.likes)?data.likes:[],likeActors=data.likeActors||{};
-  if(author.id===me){
-   likes.filter(uid=>uid&&uid!==me).forEach(uid=>{const a=likeActors[uid]||{};const key='like_'+postId+'_'+uid;arr.push({id:key,local:true,read:!!readMap[key],type:'like',postId,postTitle:title,actorId:uid,actorName:a.name||'Alguien',actorClub:a.club||'',actorAvatar:a.avatar||'',fecha:a.fecha||fechaMs(data)||Date.now(),text:'like'})});
-   comments.filter(c=>c&&c.profileId!==me).forEach(c=>{const key='comment_'+postId+'_'+c.id;arr.push({id:key,local:true,read:!!readMap[key],type:'comment',postId,postTitle:title,commentId:c.id,actorId:c.profileId||'',actorName:c.name||'Alguien',actorClub:c.club||'',actorAvatar:c.avatar||'',fecha:c.fecha||fechaMs(data)||Date.now(),text:c.text||''})});
-  }
-  const myComments=comments.filter(c=>c&&c.profileId===me).map(c=>c.id);
-  comments.filter(c=>c&&c.parentId&&myComments.includes(c.parentId)&&c.profileId!==me).forEach(c=>{const key='reply_'+postId+'_'+c.id;arr.push({id:key,local:true,read:!!readMap[key],type:'reply',postId,postTitle:title,commentId:c.id,actorId:c.profileId||'',actorName:c.name||'Alguien',actorClub:c.club||'',actorAvatar:c.avatar||'',fecha:c.fecha||fechaMs(data)||Date.now(),text:c.text||''})});
- });
- arr.sort((a,b)=>(b.fecha||0)-(a.fecha||0));return arr.slice(0,90);
-}
-function applyCompatNotifications(arr=[]){
- const prevUnread=userNotifs.filter(n=>!n.read).length;
- userNotifs=arr;renderNotifPanel();setNotifBadge();
- const unread=userNotifs.filter(n=>!n.read).length;
- if(!userNotifFirst&&unread>prevUnread){const newest=userNotifs.find(n=>!n.read);if(newest){showNotifyToast(textoNotificacion(newest));showBrowserNotification(newest)}}
- userNotifFirst=false;
-}
-async function setupCompatNotifications(){
- await initFirebase();compatNotifMode=true;
- setNotifyStatus('');
- if(compatNotifUnsub)return;
- try{
-  compatNotifUnsub=fb.onSnapshot(noticias,snap=>{const docs=[];snap.forEach(d=>docs.push({id:d.id,data:d.data()}));applyCompatNotifications(buildCompatNotificationsFromDocs(docs))},err=>{console.warn('Modo compatible sin directo',err);setNotifyStatus('No se pudo activar el directo. Se intentará al recargar o al abrir secciones.','err')});
- }catch(e){
-  console.warn('Compat notifications fallback',e);
-  try{const snap=await fb.getDocs(noticias);const docs=[];snap.forEach(d=>docs.push({id:d.id,data:d.data()}));applyCompatNotifications(buildCompatNotificationsFromDocs(docs))}catch(err){setNotifyStatus('No se pudieron leer publicaciones para crear avisos. Revisa conexión.','err')}
- }
-}
-async function setupUserNotifications(force=false){
- if(!profileReady()){setNotifyStatus('Crea y guarda tu perfil para recibir avisos de likes, comentarios y respuestas.','err');return}
+let userNotifUnsub=null,userNotifFirst=true,userNotifs=[];
+async function setupUserNotifications(){
+ if(!profileReady()||userNotifUnsub)return;
  await initFirebase();
  const me=currentProfile().id;
- if(userNotifUnsub&&window.__notifOwnerId!==me){try{userNotifUnsub()}catch(_){} userNotifUnsub=null;userNotifFirst=true;userNotifs=[]}
- if(compatNotifUnsub&&window.__notifOwnerId!==me){try{compatNotifUnsub()}catch(_){} compatNotifUnsub=null;compatNotifMode=false;userNotifFirst=true;userNotifs=[]}
- if((userNotifUnsub||compatNotifUnsub)&&!force)return;
- window.__notifOwnerId=me;
- setNotifyStatus('🔔 Notificaciones activadas para <b>'+notifSafeText(currentProfile().name||'tu perfil')+'</b>.');
- try{
-  const q=fb.query(notificaciones,fb.where('ownerId','==',me));
-  userNotifUnsub=fb.onSnapshot(q,snap=>{
-   const prevUnread=userNotifs.filter(n=>!n.read).length;
-   const arr=[];snap.forEach(d=>arr.push({id:d.id,...d.data()}));
-   arr.sort((a,b)=>(b.fecha||0)-(a.fecha||0));userNotifs=arr.slice(0,80);renderNotifPanel();setNotifBadge();
-   const unread=userNotifs.filter(n=>!n.read).length;if(!userNotifFirst&&unread>prevUnread){const newest=userNotifs.find(n=>!n.read);if(newest){showNotifyToast(textoNotificacion(newest));showBrowserNotification(newest)}}
-   userNotifFirst=false;
-  },err=>{console.warn('Notificaciones Firestore no disponibles, usando modo compatible',err);try{if(userNotifUnsub)userNotifUnsub()}catch(_){} userNotifUnsub=null;setupCompatNotifications().catch(console.warn)});
- }catch(e){console.warn('Notificaciones Firestore no disponibles, usando modo compatible',e);await setupCompatNotifications()}
+ const q=fb.query(notificaciones,fb.where('ownerId','==',me));
+ userNotifUnsub=fb.onSnapshot(q,snap=>{
+  const prevUnread=userNotifs.filter(n=>!n.read).length;
+  const arr=[];snap.forEach(d=>arr.push({id:d.id,...d.data()}));
+  arr.sort((a,b)=>(b.fecha||0)-(a.fecha||0));userNotifs=arr.slice(0,60);renderNotifPanel();
+  const unread=userNotifs.filter(n=>!n.read).length;const badge=document.getElementById('notify-badge');if(badge){badge.textContent=unread>99?'99+':String(unread);badge.classList.toggle('show',unread>0)}
+  if(!userNotifFirst&&unread>prevUnread){const newest=userNotifs.find(n=>!n.read);if(newest)showNotifyToast(textoNotificacion(newest))}
+  userNotifFirst=false;
+ },err=>console.warn('Notificaciones no disponibles',err));
 }
 function renderNotifPanel(){
  const list=document.getElementById('notify-list');if(!list)return;
  if(!userNotifs.length){list.innerHTML='<div class="notify-empty">No hay notificaciones todavía.</div>';return;}
- list.innerHTML='';userNotifs.forEach(n=>{const item=document.createElement('div');item.className='notify-item '+(!n.read?'unread':'');item.innerHTML=`<b>${n.actorName||'Alguien'}</b><p></p><span class="notify-time">${fmtDate(n.fecha)}</span>`;item.querySelector('p').textContent=textoNotificacion(n);item.addEventListener('click',async()=>{try{if(n.local){const readMap=getNotifReadMap();readMap[n.id]=true;saveNotifReadMap(readMap);n.read=true;renderNotifPanel();setNotifBadge()}else{await fb.updateDoc(fb.doc(db,'notificaciones',n.id),{read:true})}}catch(_){} if(n.postId){const snap=await fb.getDoc(fb.doc(db,'noticias',n.postId));if(snap.exists())openPostLightbox(snap.data().src,n.postId,snap.data())}});list.appendChild(item)});
+ list.innerHTML='';userNotifs.forEach(n=>{const item=document.createElement('div');item.className='notify-item '+(!n.read?'unread':'');item.innerHTML=`<b>${n.actorName||'Alguien'}</b><p></p><span class="notify-time">${fmtDate(n.fecha)}</span>`;item.querySelector('p').textContent=textoNotificacion(n);item.addEventListener('click',async()=>{try{await fb.updateDoc(fb.doc(db,'notificaciones',n.id),{read:true})}catch(_){} if(n.postId){const snap=await fb.getDoc(fb.doc(db,'noticias',n.postId));if(snap.exists())openPostLightbox(snap.data().src,n.postId,snap.data())}});list.appendChild(item)});
 }
-async function markAllNotificationsRead(){
- try{
-  const readMap=getNotifReadMap();
-  userNotifs.filter(n=>!n.read).forEach(n=>{if(n.local)readMap[n.id]=true});
-  saveNotifReadMap(readMap);
-  await initFirebase();
-  await Promise.all(userNotifs.filter(n=>!n.read&&!n.local).map(n=>fb.updateDoc(fb.doc(db,'notificaciones',n.id),{read:true})));
-  userNotifs=userNotifs.map(n=>({...n,read:true}));renderNotifPanel();setNotifBadge();
- }catch(e){console.warn(e)}
-}
+async function markAllNotificationsRead(){try{await initFirebase();await Promise.all(userNotifs.filter(n=>!n.read).map(n=>fb.updateDoc(fb.doc(db,'notificaciones',n.id),{read:true})))}catch(e){console.warn(e)}}
 
 
 function contarComentariosVisibles(comments=[]){
@@ -1711,7 +1649,7 @@ function idsComentarioConRespuestas(comments=[],commentId){
 }
 
 
-/* ===== FIX AUTOR: PERMITIR BORRAR SI ES TU PUBLICACIÓN AUNQUE CAMBIE EL ID LOCAL ===== */
+/* ===== FIX AUTOR/COMENTARIOS: RECONOCER PROPIETARIO AUNQUE CAMBIE EL ID LOCAL ===== */
 function sameAuthorAsCurrent(author={}){
  const me=currentProfile();
  if(!author||!me)return false;
@@ -1722,11 +1660,21 @@ function sameAuthorAsCurrent(author={}){
  const mc=(me.club||'').trim().toLowerCase();
  return !!(an&&mn&&an===mn&&(!ac||!mc||ac===mc));
 }
+function sameCommentAsCurrent(c={}){
+ const me=currentProfile();
+ if(!c||!me)return false;
+ if(c.profileId&&me.id&&c.profileId===me.id)return true;
+ const cn=(c.name||'').trim().toLowerCase();
+ const mn=(me.name||'').trim().toLowerCase();
+ const cc=(c.club||'').trim().toLowerCase();
+ const mc=(me.club||'').trim().toLowerCase();
+ return !!(cn&&mn&&cn===mn&&(!cc||!mc||cc===mc));
+}
 
 function renderComment(c,postId,allComments=[],onReply=null,depth=0){
  const me=currentProfile().id;
  const div=document.createElement('div');div.className='comment '+(c.parentId?'reply':'');div.dataset.commentId=c.id||'';
- const canDelete=c.profileId===me;
+ const canDelete=sameCommentAsCurrent(c);
  div.innerHTML=`<div class="comment-head"><img src="${c.avatar||DEFAULT_AVATAR}" alt=""><span class="comment-author-click">${c.name||'Entrenador'}</span><small class="comment-date">${fmtDate(c.fecha)}</small>${canDelete?'<button class="comment-del" type="button">Eliminar</button>':''}</div><div class="comment-text"></div><div class="comment-actions-row"><button type="button" class="comment-reply-btn">Responder</button></div>`;
  div.querySelector('.comment-text').textContent=c.text||'';
  div.querySelector('.comment-author-click')?.addEventListener('click',()=>openMiniProfile({name:c.name,club:c.club,avatar:c.photo||c.avatar}));
@@ -1752,11 +1700,11 @@ function renderSocialPanel(id,f){
  const setReplyTarget=(c)=>{replyTarget=c;replyHint.querySelector('span').textContent='Respondiendo a '+(c.name||'Entrenador');replyHint.classList.add('show');inp.focus()};
  replyHint.querySelector('button').addEventListener('click',()=>{replyTarget=null;replyHint.classList.remove('show')});
  if(!visibleCount){list.innerHTML='<div class="social-empty">Todavía no hay comentarios. Sé el primero en comentar.</div>'}else{comments.filter(c=>!c.parentId).sort((a,b)=>(a.fecha||0)-(b.fecha||0)).forEach(c=>list.appendChild(renderComment(c,id,comments,setReplyTarget)))}
- const form=document.createElement('div');form.className='comment-form';const inp=document.createElement('input');inp.className='input';inp.placeholder='Escribe un mensaje...';inp.maxLength=220;const send=document.createElement('button');send.className='btn send-message-btn';send.type='button';send.setAttribute('aria-label','Enviar mensaje');send.title='Enviar mensaje';send.innerHTML='📨 Enviar';const submit=()=>{window.addComment(id,inp.value,replyTarget?replyTarget.id:null);inp.value='';replyTarget=null;replyHint.classList.remove('show')};send.addEventListener('click',submit);inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')submit()});form.append(inp,send);formWrap.appendChild(form);panel.appendChild(formWrap);panel.querySelector('#lb-like')?.addEventListener('click',()=>window.toggleLike(id));panel.querySelector('#lb-claim')?.addEventListener('click',()=>window.reclamarPublicacion(id));
+ const form=document.createElement('div');form.className='comment-form';const inp=document.createElement('input');inp.className='input';inp.placeholder='Escribe un mensaje...';inp.maxLength=220;const send=document.createElement('button');send.className='btn send-message-btn';send.type='button';send.setAttribute('aria-label','Enviar mensaje');send.title='Enviar mensaje';send.innerHTML='📨 Enviar';const submit=()=>{window.addComment(id,inp.value,replyTarget?replyTarget.id:null);inp.value='';replyTarget=null;replyHint.classList.remove('show')};send.addEventListener('click',submit);inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')submit()});form.append(inp,send);formWrap.appendChild(form);panel.appendChild(formWrap);panel.querySelector('#lb-like')?.addEventListener('click',()=>window.toggleLike(id));panel.querySelector('#lb-delete')?.addEventListener('click',()=>window.borrarFotoPrensaReal(id));panel.querySelector('#lb-claim')?.addEventListener('click',()=>window.reclamarPublicacion(id));
  const restore=window.__restoreCommentsPosition;
  if(restore&&restore.postId===id){requestAnimationFrame(()=>{const freshList=panel.querySelector('.social-panel-comments');if(freshList){const targetId=restore.targetId||'';const target=targetId?freshList.querySelector(`[data-comment-id="${targetId}"]`):null;if(target){const listRect=freshList.getBoundingClientRect();const targetRect=target.getBoundingClientRect();freshList.scrollTop+=targetRect.top-listRect.top-18;target.classList.add('comment-just-added');setTimeout(()=>target.classList.remove('comment-just-added'),1400)}else if(typeof restore.scrollTop==='number'){freshList.scrollTop=restore.scrollTop}}window.__restoreCommentsPosition=null})}
 }
-function openPostLightbox(src,id,f){currentLightboxPost=id;window.currentLightboxPost=id;const v=document.getElementById('visor'),img=document.getElementById('img-ampliada'),vid=document.getElementById('video-ampliado');v.classList.remove('video-mode');if(vid)vid.removeAttribute('src');img.style.display='block';img.alt=cleanPostTitle(f?.titulo)||'Imagen ampliada';img.src=src;renderSocialPanel(id,f||{});v.classList.add('social-mode','open');document.body.classList.add('lock')}
+function openPostLightbox(src,id,f){currentLightboxPost=id;window.currentLightboxPost=id;document.body.classList.add('social-lightbox-open');const v=document.getElementById('visor'),img=document.getElementById('img-ampliada'),vid=document.getElementById('video-ampliado');v.classList.remove('video-mode');if(vid)vid.removeAttribute('src');img.style.display='block';img.alt=cleanPostTitle(f?.titulo)||'Imagen ampliada';img.src=src;renderSocialPanel(id,f||{});v.classList.add('social-mode','open');document.body.classList.add('lock')}
 
 let activeCategory='memes';
 const state={memes:{loaded:false,loading:false},clubes:{loaded:false,loading:false},premier:{loaded:false,loading:false}};
@@ -1834,54 +1782,10 @@ async function cargarCategoria(cat,force=false){
  state[cat].loading=false;
  }
 }
-function ensureClaimPostModal(){
- let modal=document.getElementById('claim-post-modal');
- if(modal)return modal;
- modal=document.createElement('div');
- modal.id='claim-post-modal';
- modal.className='claim-post-modal';
- modal.innerHTML=`<div class="claim-post-box"><button type="button" class="claim-post-close" id="claim-post-close">&times;</button><div class="claim-post-head"><div class="claim-post-icon">🏷️</div><div><h3>Reclamar publicación</h3><p>Vas a asignar esta publicación a tu perfil de entrenador.</p></div></div><div class="claim-post-preview" id="claim-post-preview"><img id="claim-post-img" alt="Vista previa de la publicación"></div><div class="claim-post-note"><b>Importante:</b> al reclamarla, aparecerás como autor y podrás gestionarla desde tu perfil.</div><div class="claim-post-actions"><button type="button" class="claim-post-cancel" id="claim-post-cancel">Cancelar</button><button type="button" class="claim-post-confirm" id="claim-post-confirm">Sí, reclamar</button></div><div class="claim-post-status" id="claim-post-status"></div></div>`;
- document.body.appendChild(modal);
- modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
- modal.querySelector('#claim-post-close').addEventListener('click',()=>modal.classList.remove('open'));
- modal.querySelector('#claim-post-cancel').addEventListener('click',()=>modal.classList.remove('open'));
- return modal;
-}
-function confirmarReclamarPublicacion(data={}){
- return new Promise(resolve=>{
-  const modal=ensureClaimPostModal();
-  const preview=modal.querySelector('#claim-post-preview');
-  const img=modal.querySelector('#claim-post-img');
-  const status=modal.querySelector('#claim-post-status');
-  const ok=modal.querySelector('#claim-post-confirm');
-  const cancel=modal.querySelector('#claim-post-cancel');
-  const close=modal.querySelector('#claim-post-close');
-  status.textContent='';
-  if(data.src){img.src=data.src;preview.classList.add('show')}else{img.removeAttribute('src');preview.classList.remove('show')}
-  const clean=()=>{ok.onclick=null;cancel.onclick=null;close.onclick=null;modal.classList.remove('open')};
-  ok.onclick=()=>{status.textContent='Reclamando publicación...';clean();resolve(true)};
-  cancel.onclick=()=>{clean();resolve(false)};
-  close.onclick=()=>{clean();resolve(false)};
-  modal.classList.add('open');
- });
-}
-window.reclamarPublicacion=async(id)=>{
- if(!requireProfile())return;
- try{
-  await initFirebase();
-  const p=currentProfile();
-  const ref=fb.doc(db,'noticias',id);
-  const snap=await fb.getDoc(ref);
-  if(!snap.exists()){alert('No se encontró la publicación.');return}
-  const data=snap.data()||{};
-  if(data.author&&data.author.id){alert('Esta publicación ya tiene autor.');return}
-  if(!await confirmarReclamarPublicacion(data))return;
-  await fb.updateDoc(ref,{author:{id:p.id,name:p.name,club:p.club,avatar:p.avatar,photo:p.photo},claimedAt:Date.now()});
-  Object.keys(state).forEach(k=>state[k].loaded=false);
-  await cargarCategoria(activeCategory,true);
-  if(window.currentLightboxPost===id){const fresh=await fb.getDoc(ref);if(fresh.exists())renderSocialPanel(id,fresh.data())}
- }catch(e){console.error(e);alert('No se pudo reclamar la publicación')}
-};
+
+function ensureClaimPostModal(){let modal=document.getElementById('claim-post-modal');if(modal)return modal;modal=document.createElement('div');modal.id='claim-post-modal';modal.className='claim-post-modal';modal.innerHTML=`<div class="claim-post-box"><button type="button" class="claim-post-close" id="claim-post-close">&times;</button><div class="claim-post-head"><div class="claim-post-icon">🏷️</div><div><h3>Reclamar publicación</h3><p>Vas a asignar esta publicación a tu perfil de entrenador.</p></div></div><div class="claim-post-preview" id="claim-post-preview"><img id="claim-post-img" alt="Vista previa de la publicación"></div><div class="claim-post-note"><b>Importante:</b> al reclamarla, aparecerás como autor y podrás gestionarla desde tu perfil.</div><div class="claim-post-actions"><button type="button" class="claim-post-cancel" id="claim-post-cancel">Cancelar</button><button type="button" class="claim-post-confirm" id="claim-post-confirm">Sí, reclamar</button></div><div class="claim-post-status" id="claim-post-status"></div></div>`;document.body.appendChild(modal);modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});modal.querySelector('#claim-post-close').addEventListener('click',()=>modal.classList.remove('open'));modal.querySelector('#claim-post-cancel').addEventListener('click',()=>modal.classList.remove('open'));return modal}
+function confirmarReclamarPublicacion(data={}){return new Promise(resolve=>{const modal=ensureClaimPostModal(),preview=modal.querySelector('#claim-post-preview'),img=modal.querySelector('#claim-post-img'),status=modal.querySelector('#claim-post-status'),ok=modal.querySelector('#claim-post-confirm'),cancel=modal.querySelector('#claim-post-cancel'),close=modal.querySelector('#claim-post-close');status.textContent='';if(data.src){img.src=data.src;preview.classList.add('show')}else{img.removeAttribute('src');preview.classList.remove('show')}const clean=()=>{ok.onclick=null;cancel.onclick=null;close.onclick=null;modal.classList.remove('open')};ok.onclick=()=>{status.textContent='Reclamando publicación...';clean();resolve(true)};cancel.onclick=()=>{clean();resolve(false)};close.onclick=()=>{clean();resolve(false)};modal.classList.add('open')})}
+window.reclamarPublicacion=async(id)=>{if(!requireProfile())return;try{await initFirebase();const p=currentProfile();const ref=fb.doc(db,'noticias',id);const snap=await fb.getDoc(ref);if(!snap.exists()){alert('No se encontró la publicación.');return}const data=snap.data()||{};if(data.author&&data.author.id){alert('Esta publicación ya tiene autor.');return}if(!await confirmarReclamarPublicacion(data))return;await fb.updateDoc(ref,{author:{id:p.id,name:p.name,club:p.club,avatar:p.avatar,photo:p.photo},claimedAt:Date.now()});Object.keys(state).forEach(k=>state[k].loaded=false);await cargarCategoria(activeCategory,true);if(window.currentLightboxPost===id){const fresh=await fb.getDoc(ref);if(fresh.exists())renderSocialPanel(id,fresh.data())}}catch(e){console.error(e);alert('No se pudo reclamar la publicación')}};
 window.moverPublicacion=async(id,cat)=>{
  try{
  await initFirebase();
@@ -1922,7 +1826,7 @@ window.toggleLike=async(id)=>{
   const me=currentProfile().id,p=currentProfile();const arr=Array.isArray(data.likes)?data.likes:[];const wasLiked=arr.includes(me);const next=wasLiked?arr.filter(x=>x!==me):[...arr,me];
   const likeActors={...(data.likeActors||{})};if(wasLiked){delete likeActors[me]}else{likeActors[me]={id:me,name:p.name,club:p.club,avatar:p.avatar,photo:p.photo,fecha:Date.now()}}
   await fb.updateDoc(ref,{likes:next,likeActors});
-  if(!wasLiked&&data.author?.id){await crearNotificacion(data.author.id,{type:'like',postId:id,postTitle:cleanPostTitle(data.titulo),text:'like',ownerName:data.author.name||''})}
+  if(!wasLiked&&data.author?.id){await crearNotificacion(data.author.id,{type:'like',postId:id,postTitle:cleanPostTitle(data.titulo),text:'like'})}
   const visor=document.getElementById('visor');const likeDesdeVisor=!!(visor&&visor.classList.contains('open')&&visor.classList.contains('social-mode')&&window.currentLightboxPost===id);if(!wasLiked&&likeDesdeVisor)showBigLikeHeart(null);
   const updated={...data,likes:next,likeActors};const card=document.querySelector(`[data-id="${id}"]`);if(card){const btns=card.querySelectorAll('.post-actions .react-btn');const likeBtn=btns&&btns[0];if(likeBtn){likeBtn.classList.toggle('active',next.includes(me));likeBtn.textContent='❤️ '+next.length}}
   if(likeDesdeVisor){renderSocialPanel(id,updated)}else{const lb=document.getElementById('lb-like');if(lb&&window.currentLightboxPost===id){lb.classList.toggle('active',next.includes(me));lb.textContent='❤️ '+next.length}}
@@ -1945,10 +1849,10 @@ window.addComment=async(id,text,parentId=null)=>{
   const notified=new Set();
   if(parentId){
     const parent=comments.find(c=>c.id===parentId);
-    if(parent?.profileId&&parent.profileId!==p.id){notified.add(parent.profileId);await crearNotificacion(parent.profileId,{type:'reply',postId:id,postTitle:title,commentId:parentId,text,ownerName:parent.name||''})}
-    if(data.author?.id&&data.author.id!==p.id&&!notified.has(data.author.id)){await crearNotificacion(data.author.id,{type:'reply_post',postId:id,postTitle:title,commentId:newComment.id,text,ownerName:data.author.name||''})}
+    if(parent?.profileId&&parent.profileId!==p.id){notified.add(parent.profileId);await crearNotificacion(parent.profileId,{type:'reply',postId:id,postTitle:title,commentId:parentId,text})}
+    if(data.author?.id&&data.author.id!==p.id&&!notified.has(data.author.id)){await crearNotificacion(data.author.id,{type:'reply_post',postId:id,postTitle:title,commentId:newComment.id,text})}
   }else if(data.author?.id&&data.author.id!==p.id){
-    await crearNotificacion(data.author.id,{type:'comment',postId:id,postTitle:title,commentId:newComment.id,text,ownerName:data.author.name||''});
+    await crearNotificacion(data.author.id,{type:'comment',postId:id,postTitle:title,commentId:newComment.id,text});
   }
   await refreshVisibleAfterInteraction();
  }catch(e){console.error(e);alert('No se pudo publicar el comentario')}
@@ -2181,14 +2085,14 @@ document.addEventListener('DOMContentLoaded',()=>{
  if(file)file.addEventListener('change',async()=>{const selected=file.files[0];const avatar=await fileToSmallAvatar(selected);const photo=await fileToProfilePhoto(selected);file.dataset.avatar=avatar;file.dataset.photo=photo;syncPreview()});
  if(club&&!document.getElementById('profile-club-picker')){const label=document.createElement('div');label.className='profile-field-label';label.textContent='Club o rol';const picker=document.createElement('div');picker.className='profile-club-picker';picker.id='profile-club-picker';Array.from(club.options).filter(o=>o.value||o.textContent.trim()).forEach(o=>{const btn=document.createElement('button');btn.type='button';btn.className='club-choice';btn.dataset.club=o.value||o.textContent;btn.textContent=o.textContent;btn.addEventListener('click',()=>{club.value=btn.dataset.club;club.dispatchEvent(new Event('change',{bubbles:true}))});picker.appendChild(btn)});club.insertAdjacentElement('beforebegin',label);club.insertAdjacentElement('afterend',picker);updateClubChoices()}
  const preview=document.querySelector('.profile-preview'),previewImg=document.getElementById('profile-preview-img');if(preview&&!document.getElementById('profile-change-photo-btn')){const tools=document.createElement('div');tools.className='profile-photo-tools';const change=document.createElement('button');change.type='button';change.className='profile-mini-btn';change.id='profile-change-photo-btn';change.textContent='📷 Cambiar foto';change.addEventListener('click',()=>file?.click());tools.append(change);preview.querySelector('div')?.appendChild(tools)}if(previewImg)previewImg.addEventListener('click',openProfilePhoto);
- const save=document.getElementById('save-profile-btn'); if(save)save.addEventListener('click',()=>{const n=(name.value||'').trim(),c=(club.value||'').trim(),st=document.getElementById('profile-status');if(!n||!c){if(st){st.textContent='❌ Rellena nombre y club/rol.';st.className='status err'}return}setProfile({name:n,club:c,avatar:file?.dataset.avatar||currentProfile().avatar,photo:file?.dataset.photo||currentProfile().photo||file?.dataset.avatar||currentProfile().avatar});setupUserNotifications(true).catch(console.error);requestBrowserNotifications().catch(()=>{});if(st){st.textContent='✅ Perfil guardado. Notificaciones activadas.';st.className='status okmsg'}setTimeout(closeProfileModal,350)});
+ const save=document.getElementById('save-profile-btn'); if(save)save.addEventListener('click',()=>{const n=(name.value||'').trim(),c=(club.value||'').trim(),st=document.getElementById('profile-status');if(!n||!c){if(st){st.textContent='❌ Rellena nombre y club/rol.';st.className='status err'}return}setProfile({name:n,club:c,avatar:file?.dataset.avatar||currentProfile().avatar,photo:file?.dataset.photo||currentProfile().photo||file?.dataset.avatar||currentProfile().avatar});if(st){st.textContent='✅ Perfil guardado.';st.className='status okmsg'}setTimeout(closeProfileModal,350)});
  if(!profileReady())setTimeout(()=>openProfileModal(true),650);
- setupNotifications().catch(console.error);setupUserNotifications().catch(console.error);const nf=document.getElementById('notify-fab'),np=document.getElementById('notify-panel'),nc=document.getElementById('notify-close');if(nf)nf.addEventListener('click',async()=>{np?.classList.toggle('open');await requestBrowserNotifications();await setupUserNotifications(true);if(np?.classList.contains('open'))markAllNotificationsRead()});if(nc)nc.addEventListener('click',()=>np?.classList.remove('open'));
+ setupNotifications().catch(console.error);setupUserNotifications().catch(console.error);const nf=document.getElementById('notify-fab'),np=document.getElementById('notify-panel'),nc=document.getElementById('notify-close');if(nf)nf.addEventListener('click',()=>{np?.classList.toggle('open');if(np?.classList.contains('open'))markAllNotificationsRead()});if(nc)nc.addEventListener('click',()=>np?.classList.remove('open'));
 });
 </script>
 
 <script>
-(function(){let audioCtx=null,fxGain=null,bgmGain=null,bgmSource=null,fxOn=true;const MUSIC_KEY='premier_osm_music_on_v2';function getAudio(){return document.getElementById('bgm-audio')}function getBtn(){return document.getElementById('bgm-audio-btn')}function ensureAudio(){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume().catch(()=>{});if(!fxGain){fxGain=audioCtx.createGain();fxGain.gain.value=.075;fxGain.connect(audioCtx.destination)}return audioCtx}catch(_){return null}}function connectBgm(){const a=getAudio(),ctx=ensureAudio();if(!a||!ctx)return;try{a.volume=.24;a.muted=false;a.loop=true;a.playsInline=true;if(!bgmGain){bgmGain=ctx.createGain();bgmGain.gain.value=.16;bgmGain.connect(ctx.destination)}if(!bgmSource){bgmSource=ctx.createMediaElementSource(a);bgmSource.connect(bgmGain)}}catch(_){try{a.volume=.24;a.muted=false;a.loop=true}catch(__){}}}function setBtn(on,msg){const b=getBtn();if(!b)return;b.classList.toggle('music-on',!!on);b.textContent=on?'🔊 Música ON':'🔇 Música OFF';if(msg)b.title=msg}function showMusicHint(msg){let h=document.getElementById('music-mobile-hint');if(!h){h=document.createElement('div');h.id='music-mobile-hint';h.className='music-mobile-hint';document.body.appendChild(h)}h.textContent=msg||'Toca “Música OFF” para activar la música en móvil.';h.classList.add('show');clearTimeout(h._t);h._t=setTimeout(()=>h.classList.remove('show'),5200)}async function playBgm(fromGesture=false){const a=getAudio();if(!a)return false;connectBgm();try{a.muted=false;await a.play();localStorage.setItem(MUSIC_KEY,'1');setBtn(true,'Música activada');return true}catch(e){setBtn(false,'Pulsa para activar la música');if(fromGesture)showMusicHint('El navegador ha bloqueado el audio. Toca otra vez el botón de música o sube el volumen del móvil.');return false}}function pauseBgm(){const a=getAudio();if(a)a.pause();localStorage.setItem(MUSIC_KEY,'0');setBtn(false,'Música desactivada')}function beep(freq=760,dur=.07,type='triangle',vol=.65){if(!fxOn)return;const ctx=ensureAudio();if(!ctx||!fxGain)return;const o=ctx.createOscillator(),g=ctx.createGain(),now=ctx.currentTime;o.type=type;o.frequency.setValueAtTime(freq,now);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(vol,now+.01);g.gain.exponentialRampToValueAtTime(.0001,now+dur);o.connect(g);g.connect(fxGain);o.start(now);o.stop(now+dur+.03)}function clickSound(){beep(760,.055,'triangle',.45)}const oldHeart=window.showBigLikeHeart;window.showBigLikeHeart=function(card){beep(523,.08,'sine',.70);setTimeout(()=>beep(784,.09,'sine',.45),55);if(typeof oldHeart==='function')oldHeart(card)};document.addEventListener('click',e=>{if(e.target.closest('button,.btn,.navbtn,.react-btn,.download-btn,a,img.zoomable,.imgcard')){ensureAudio();clickSound()}},true);document.addEventListener('dblclick',function(e){const img=e.target.closest('.imgcard img,#img-ampliada');if(!img)return;let id=null;const card=img.closest('.imgcard');if(card)id=card.dataset.id;if(!id&&window.currentLightboxPost)id=window.currentLightboxPost;if(id&&window.toggleLike){e.preventDefault();e.stopPropagation();window.toggleLike(id)}},true);document.addEventListener('DOMContentLoaded',()=>{window.cerrarModalTroll=function(){};window.clickTroll=function(){};document.querySelectorAll('.trollbox,#troll,#modal-troll').forEach(el=>el.remove());const b=getBtn();setBtn(false,'Pulsa para activar la música');if(b){b.addEventListener('click',async(ev)=>{ev.preventDefault();ev.stopPropagation();const a=getAudio();if(a&&!a.paused){pauseBgm()}else{await playBgm(true)}})}const unlock=async()=>{ensureAudio();if(localStorage.getItem(MUSIC_KEY)==='1'){await playBgm(false)}};['pointerdown','touchstart','click'].forEach(ev=>document.addEventListener(ev,unlock,{once:true,passive:true}));setTimeout(()=>{if(localStorage.getItem(MUSIC_KEY)!=='1')showMusicHint('En móvil la música no puede empezar sola: pulsa “Música OFF” para activarla.')},1200)})})();
+(function(){let audioCtx=null,fxGain=null,bgmGain=null,bgmSource=null,fxOn=true,musicOn=true;function ensureAudio(){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();if(!fxGain){fxGain=audioCtx.createGain();fxGain.gain.value=.075;fxGain.connect(audioCtx.destination)}return audioCtx}catch(_){return null}}function connectBgm(){const a=document.getElementById('bgm-audio'),ctx=ensureAudio();if(!a||!ctx)return;try{a.volume=.12;if(!bgmGain){bgmGain=ctx.createGain();bgmGain.gain.value=.07;bgmGain.connect(ctx.destination)}if(!bgmSource){bgmSource=ctx.createMediaElementSource(a);bgmSource.connect(bgmGain)}}catch(_){try{a.volume=.10}catch(__){}}}function playBgm(){const a=document.getElementById('bgm-audio');connectBgm();if(a)a.play().catch(()=>{})}function beep(freq=760,dur=.07,type='triangle',vol=.65){if(!fxOn)return;const ctx=ensureAudio();if(!ctx||!fxGain)return;const o=ctx.createOscillator(),g=ctx.createGain(),now=ctx.currentTime;o.type=type;o.frequency.setValueAtTime(freq,now);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(vol,now+.01);g.gain.exponentialRampToValueAtTime(.0001,now+dur);o.connect(g);g.connect(fxGain);o.start(now);o.stop(now+dur+.03)}function clickSound(){beep(760,.055,'triangle',.45)}const oldHeart=window.showBigLikeHeart;window.showBigLikeHeart=function(card){beep(523,.08,'sine',.70);setTimeout(()=>beep(784,.09,'sine',.45),55);if(typeof oldHeart==='function')oldHeart(card)};document.addEventListener('click',e=>{if(e.target.closest('button,.btn,.navbtn,.react-btn,.download-btn,a,img.zoomable,.imgcard')){ensureAudio();clickSound()}},true);document.addEventListener('dblclick',function(e){const img=e.target.closest('.imgcard img,#img-ampliada');if(!img)return;let id=null;const card=img.closest('.imgcard');if(card)id=card.dataset.id;if(!id&&window.currentLightboxPost)id=window.currentLightboxPost;if(id&&window.toggleLike){e.preventDefault();e.stopPropagation();window.toggleLike(id)}},true);document.addEventListener('DOMContentLoaded',()=>{window.cerrarModalTroll=function(){};window.clickTroll=function(){};document.querySelectorAll('.trollbox,#troll,#modal-troll').forEach(el=>el.remove());document.addEventListener('pointerdown',playBgm,{once:true})})})();
 </script>
 
 
