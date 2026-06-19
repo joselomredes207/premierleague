@@ -375,7 +375,7 @@ window.filtrarPorCuenta=function(nombre){
 if(typeof window.switchTab==='function')window.switchTab(null,'comunicados-clubes');
 setTimeout(()=>{const inp=document.getElementById('buscar-clubes');if(inp)inp.value=nombre||'';const fil=document.getElementById('filtro-clubes');if(fil)fil.value='Cuenta de club';applyGalleryFilters('clubes')},450)
 };
-function paint(g,f,id,prepend=false){const cat=f.categoria||'memes',likes=Array.isArray(f.likes)?f.likes:[],comments=Array.isArray(f.comments)?f.comments:[],liked=likes.includes(currentProfile().id),titleText=cleanPostTitle(f.titulo),author=f.author||{},owner=f.owner||{},ownerId=f.ownerId||owner.id||author.id,isLegacy=!ownerId&&!author.id,canManage=true;const card=document.createElement('div');card.className='imgcard card '+(!titleText?'post-no-title':'');card.dataset.id=id;card.dataset.title=(titleText||'').toLowerCase();card.dataset.author=((author.name||'')+' '+(author.club||'')).toLowerCase();card.dataset.role=author.role||author.selectedAuthorRole||'Entrenador';card.dataset.likes=String(likes.length);card.dataset.comments=String(contarComentariosVisibles(comments));card.dataset.date=String(fechaMs(f)||Date.now());card.dataset.pinned=f.pinned?'1':'0';if(f.pinned){const pin=document.createElement('div');pin.className='pinned-ribbon';pin.textContent='📌 Fijado';card.appendChild(pin)}const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.src=f.src||'';img.alt=titleText||'Publicación sin título';img.className='zoomable';img.addEventListener('click',()=>openPostLightbox(img.src,id,f));const body=document.createElement('div');body.style.cssText='padding:15px;text-align:center;font-weight:bold';if(titleText||canManage){const row=document.createElement('div');row.className='card-title-row';if(titleText){const title=document.createElement('span');title.textContent=titleText;row.appendChild(title)}if(canManage){const edit=document.createElement('button');edit.type='button';edit.className='inline-title-edit';edit.title=titleText?'Editar título':'Añadir título';edit.textContent='✏️';edit.addEventListener('click',ev=>{ev.stopPropagation();window.editarTituloPublicacion(id,titleText)});row.appendChild(edit)}body.appendChild(row)}const authorLine=document.createElement('div');authorLine.className='author-line';authorLine.innerHTML=`<img src="${author.avatar||DEFAULT_AVATAR}" alt="Autor" loading="lazy" decoding="async"><span>${author.name||'Entrenador anónimo'} · ${author.club||'Sin club'}</span>`;authorLine.addEventListener('click',()=>openMiniProfile({name:author.name,club:author.club,avatar:author.photo||author.avatar}));body.appendChild(authorLine);const typeBadge=document.createElement('div');typeBadge.className='author-type-badge';typeBadge.textContent=autorLabel(author.role||author.selectedAuthorRole||'Entrenador');body.appendChild(typeBadge);if(isLegacy){const legacy=document.createElement('div');legacy.className='legacy-author-warning';legacy.textContent='Publicación sin autor · puedes reclamarla';body.appendChild(legacy)}const actions=document.createElement('div');actions.className='post-actions';const likeBtn=document.createElement('button');likeBtn.type='button';likeBtn.className='react-btn '+(liked?'active':'');likeBtn.textContent='❤️ '+likes.length;likeBtn.addEventListener('click',()=>window.toggleLike(id));const commentBtn=document.createElement('button');commentBtn.type='button';commentBtn.className='react-btn';commentBtn.textContent='💬 '+comments.length;commentBtn.addEventListener('click',()=>openPostLightbox(img.src,id,f));const viewBtn=document.createElement('button');viewBtn.type='button';viewBtn.className='download-btn view-image-btn';viewBtn.textContent='🖼️ Ver imagen';viewBtn.addEventListener('click',ev=>{ev.stopPropagation();window.abrirLightbox(img.src)});const dl=document.createElement('a');dl.className='download-btn';dl.href=f.src||'#';dl.download=safeFileName(titleText||'publicacion-premier-osm')+'.jpg';dl.textContent='⬇️ Descargar';const authorChangeBtn=document.createElement('button');authorChangeBtn.type='button';authorChangeBtn.className='download-btn change-author-card-btn';authorChangeBtn.textContent='👤 Autor';authorChangeBtn.addEventListener('click',ev=>{ev.stopPropagation();window.editarAutorPublicacion(id,author)});actions.append(likeBtn,commentBtn,viewBtn,authorChangeBtn,dl);body.appendChild(actions);const move=document.createElement('div');move.className='move';Object.keys(cats).filter(k=>k!==cat).forEach(k=>move.appendChild(crearBotonMover(id,k)));body.appendChild(move);card.append(img,body);prepend?g.prepend(card):g.appendChild(card);applyGalleryFilters(cat)}
+function paint(g,f,id,prepend=false){const cat=f.categoria||'memes',likes=Array.isArray(f.likes)?f.likes:[],comments=Array.isArray(f.comments)?f.comments:[],liked=likes.includes(currentProfile().id),titleText=cleanPostTitle(f.titulo),author=f.author||{},owner=f.owner||{},ownerId=f.ownerId||owner.id||author.id,isLegacy=!ownerId&&!author.id,canManage=true;const card=document.createElement('div');card.className='imgcard card '+(!titleText?'post-no-title':'');card.dataset.id=id;card.dataset.title=(titleText||'').toLowerCase();card.dataset.author=((author.name||'')+' '+(author.club||'')).toLowerCase();card.dataset.role=author.role||author.selectedAuthorRole||'Entrenador';card.dataset.likes=String(likes.length);card.dataset.comments=String(contarComentariosVisibles(comments));card.dataset.date=String(fechaMs(f)||Date.now());card.dataset.pinned=f.pinned?'1':'0';if(f.pinned){const pin=document.createElement('div');pin.className='pinned-ribbon';pin.textContent='📌 Fijado';card.appendChild(pin)}const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.src=f.src||'';img.alt=titleText||'Publicación sin título';img.className='zoomable';img.addEventListener('click',()=>openPostLightbox(img.src,id,f));const body=document.createElement('div');body.style.cssText='padding:15px;text-align:center;font-weight:bold';if(titleText||canManage){const row=document.createElement('div');row.className='card-title-row';if(titleText){const CARD_TITLE_LIMIT=70;const wrap=document.createElement('div');wrap.className='card-title-wrap';const title=document.createElement('span');title.className='card-title-text';title.textContent=titleText;wrap.appendChild(title);if(titleText.length>CARD_TITLE_LIMIT){const toggle=document.createElement('button');toggle.type='button';toggle.className='card-title-toggle';toggle.textContent='Ver más';toggle.addEventListener('click',ev=>{ev.stopPropagation();const exp=title.classList.toggle('expanded');toggle.textContent=exp?'Ver menos':'Ver más'});wrap.appendChild(toggle)}row.appendChild(wrap)}if(canManage){const edit=document.createElement('button');edit.type='button';edit.className='inline-title-edit';edit.title=titleText?'Editar título':'Añadir título';edit.textContent='✏️';edit.addEventListener('click',ev=>{ev.stopPropagation();window.editarTituloPublicacion(id,titleText)});row.appendChild(edit)}body.appendChild(row)}const authorLine=document.createElement('div');authorLine.className='author-line';authorLine.innerHTML=`<img src="${author.avatar||DEFAULT_AVATAR}" alt="Autor" loading="lazy" decoding="async"><span>${author.name||'Entrenador anónimo'} · ${author.club||'Sin club'}</span>`;authorLine.addEventListener('click',()=>openMiniProfile({name:author.name,club:author.club,avatar:author.photo||author.avatar}));body.appendChild(authorLine);const typeBadge=document.createElement('div');typeBadge.className='author-type-badge';typeBadge.textContent=autorLabel(author.role||author.selectedAuthorRole||'Entrenador');body.appendChild(typeBadge);if(isLegacy){const legacy=document.createElement('div');legacy.className='legacy-author-warning';legacy.textContent='Publicación sin autor · puedes reclamarla';body.appendChild(legacy)}const actions=document.createElement('div');actions.className='post-actions';const likeBtn=document.createElement('button');likeBtn.type='button';likeBtn.className='react-btn '+(liked?'active':'');likeBtn.textContent='❤️ '+likes.length;likeBtn.addEventListener('click',()=>window.toggleLike(id));const commentBtn=document.createElement('button');commentBtn.type='button';commentBtn.className='react-btn';commentBtn.textContent='💬 '+comments.length;commentBtn.addEventListener('click',()=>openPostLightbox(img.src,id,f));const viewBtn=document.createElement('button');viewBtn.type='button';viewBtn.className='download-btn view-image-btn';viewBtn.textContent='🖼️ Ver imagen';viewBtn.addEventListener('click',ev=>{ev.stopPropagation();window.abrirLightbox(img.src)});const dl=document.createElement('a');dl.className='download-btn';dl.href=f.src||'#';dl.download=safeFileName(titleText||'publicacion-premier-osm')+'.jpg';dl.textContent='⬇️ Descargar';const authorChangeBtn=document.createElement('button');authorChangeBtn.type='button';authorChangeBtn.className='download-btn change-author-card-btn';authorChangeBtn.textContent='👤 Autor';authorChangeBtn.addEventListener('click',ev=>{ev.stopPropagation();window.editarAutorPublicacion(id,author)});actions.append(likeBtn,commentBtn,viewBtn,authorChangeBtn,dl);body.appendChild(actions);const move=document.createElement('div');move.className='move';Object.keys(cats).filter(k=>k!==cat).forEach(k=>move.appendChild(crearBotonMover(id,k)));body.appendChild(move);card.append(img,body);prepend?g.prepend(card):g.appendChild(card);applyGalleryFilters(cat)}
 function quitarBotonVerMasCategoria(cat){document.querySelectorAll('.ver-mas-publicaciones[data-cat="'+cat+'"]').forEach(btn=>btn.remove());}
 function limpiarVerMasDuplicados(){const all=Array.from(document.querySelectorAll('.ver-mas-publicaciones,.load-more')).filter(b=>(b.textContent||'').toLowerCase().includes('ver más publicaciones'));const seen={};all.forEach(b=>{const cat=b.dataset.cat||b.closest('section')?.id||'x';if(seen[cat])b.remove();else seen[cat]=b;});}
 function mantenerCamaraPublicaciones(y){const pos=Number.isFinite(y)?y:window.scrollY;requestAnimationFrame(()=>{window.scrollTo({top:pos,left:window.scrollX,behavior:'auto'});setTimeout(()=>window.scrollTo({top:pos,left:window.scrollX,behavior:'auto'}),0);});}
@@ -1006,4 +1006,164 @@ ready(async function(){localStorage.removeItem(OLD_KEY);killOld();paintBtn();pho
   };
 })();
 </script>
+<style id="card-actions-compact">
+/* ── Altura uniforme en todas las tarjetas de galería ── */
+#galeria-noticias,
+#galeria-mercado,
+#galeria-clubes,
+#galeria-memes {
+  align-items: stretch !important;
+}
+
+.imgcard.card,
+.card.imgcard,
+.card[data-id],
+.imgcard[data-id] {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.imgcard.card > div:last-child,
+.card.imgcard > div:last-child {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.imgcard.card .card-title-row,
+.card.imgcard .card-title-row {
+  min-height: 44px !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+
+.imgcard.card .post-actions,
+.card.imgcard .post-actions {
+  margin-top: auto !important;
+}
+
+/* ── Zona de acciones de tarjeta: compacta y estética ── */
+.imgcard.card .post-actions,
+.card.imgcard .post-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  margin: 8px 0 4px !important;
+  padding: 0 !important;
+}
+
+/* Botones de like/comentario/ver imagen: pequeños y redondeados */
+.imgcard.card .post-actions .react-btn,
+.imgcard.card .post-actions .view-image-btn,
+.imgcard.card .post-actions .download-btn,
+.card.imgcard .post-actions .react-btn,
+.card.imgcard .post-actions .view-image-btn,
+.card.imgcard .post-actions .download-btn {
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 0 10px !important;
+  font-size: .70rem !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  white-space: nowrap !important;
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* Botón Descargar: solo icono circular */
+.imgcard.card .post-actions a.download-btn,
+.card.imgcard .post-actions a.download-btn {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  max-width: 32px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  font-size: 0 !important;
+  justify-content: center !important;
+}
+.imgcard.card .post-actions a.download-btn::before,
+.card.imgcard .post-actions a.download-btn::before {
+  content: '⬇️' !important;
+  font-size: .85rem !important;
+}
+
+/* Zona de mover: mismo tamaño que botones de acción */
+.imgcard.card .move,
+.card.imgcard .move {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  margin: 4px 0 6px !important;
+  padding: 5px 8px 0 !important;
+  border-top: 1px solid rgba(255,255,255,.07) !important;
+}
+
+.imgcard.card .move button,
+.card.imgcard .move button {
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 0 10px !important;
+  font-size: .70rem !important;
+  font-weight: 900 !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  background: rgba(255,255,255,.05) !important;
+  color: rgba(255,255,255,.55) !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: background .15s, color .15s !important;
+}
+.imgcard.card .move button:hover,
+.card.imgcard .move button:hover {
+  background: rgba(0,255,135,.13) !important;
+  color: var(--pl-green) !important;
+  border-color: rgba(0,255,135,.28) !important;
+}
+
+/* ── Título recortado en tarjetas: 2 líneas + botón "Ver más" ── */
+.card-title-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+.card-title-text {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.32 !important;
+  max-width: 100% !important;
+  overflow-wrap: anywhere !important;
+}
+.card-title-text.expanded {
+  -webkit-line-clamp: unset !important;
+  display: block !important;
+  overflow: visible !important;
+}
+.card-title-toggle {
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--pl-cyan) !important;
+  font-weight: 1000 !important;
+  font-size: .74rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: .3px !important;
+  cursor: pointer !important;
+  padding: 2px 4px !important;
+}
+.card-title-toggle:hover {
+  color: var(--pl-green) !important;
+  text-decoration: underline !important;
+}
+</style>
 </body></html>
