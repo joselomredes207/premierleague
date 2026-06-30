@@ -1288,5 +1288,86 @@ ready(async function(){localStorage.removeItem(OLD_KEY);killOld();paintBtn();pho
   color: var(--pl-green) !important;
   text-decoration: underline !important;
 }
+
+/* ===== CHIRPY HACK OVERLAY ===== */
+#chirpy-hack-overlay{
+  position:fixed; inset:0; z-index:999999;
+  background:#000;
+  color:#39ff14;
+  font-family:'Courier New', monospace;
+  display:flex; align-items:center; justify-content:center;
+  padding:24px;
+  animation: chirpyFlicker 0.15s infinite alternate;
+}
+@keyframes chirpyFlicker{
+  0%{ opacity:1; }
+  100%{ opacity:0.96; }
+}
+#chirpy-hack-box{
+  max-width:680px; width:100%;
+  border:2px solid #39ff14;
+  box-shadow:0 0 25px #39ff14, inset 0 0 15px rgba(57,255,20,.3);
+  padding:28px;
+  background:rgba(0,20,0,.6);
+}
+#chirpy-hack-box h1{
+  font-size:1.4rem; margin:0 0 14px; letter-spacing:1px;
+  text-shadow:0 0 8px #39ff14;
+}
+#chirpy-hack-box p{
+  font-size:.95rem; line-height:1.6; margin:0 0 12px;
+  white-space:pre-wrap;
+}
+#chirpy-hack-cursor{
+  display:inline-block; width:9px; height:1.1em; background:#39ff14;
+  animation: chirpyBlink 1s step-end infinite; vertical-align:text-bottom;
+}
+@keyframes chirpyBlink{50%{opacity:0;}}
+#chirpy-hack-close{
+  margin-top:18px; background:transparent; border:1px solid #39ff14; color:#39ff14;
+  font-family:inherit; padding:8px 16px; cursor:pointer; letter-spacing:1px;
+}
+#chirpy-hack-close:hover{ background:#39ff14; color:#000; }
+.chirpy-glitch-text{
+  text-shadow:2px 0 #ff0040, -2px 0 #00fff9;
+  animation: chirpyGlitch 2.2s infinite;
+}
+@keyframes chirpyGlitch{
+  0%,93%,100%{ text-shadow:2px 0 #ff0040, -2px 0 #00fff9; }
+  94%{ text-shadow:-3px 0 #ff0040, 3px 0 #00fff9; }
+  96%{ text-shadow:3px 0 #ff0040, -3px 0 #00fff9; }
+}
 </style>
+<div id="chirpy-hack-overlay">
+  <div id="chirpy-hack-box">
+    <h1 class="chirpy-glitch-text">⚠ SISTEMA COMPROMETIDO ⚠</h1>
+    <p id="chirpy-hack-typed"></p>
+    <button id="chirpy-hack-close">Aceptar y volver a la web</button>
+  </div>
+</div>
+<script id="chirpy-hack-script">
+(function(){
+  var msg = "Para el entrenador del Tottenham Hotspur, Bulevar del Norte de Londres:\n\nNo eres tú, soy yo. Llevo temporadas posado en ese escudo viendo cómo se nos escapa la Premier por los dedos en las últimas jornadas. Ya no aguanto más silbar para la grada y aplaudir cuando metemos el quinto en la Conference League.\n\nHe entrado en este sistema solo para dejarte un recado: cambia el once, cambia el dibujo, cambia lo que haga falta, pero por favor, dale una alegría a este pájaro antes de que me jubile en lo alto del palo de córner.\n\nNo es nada personal. Es muy personal.\n\nCon cariño y plumas erizadas,\nChirpy 🐓";
+  var target = document.getElementById('chirpy-hack-typed');
+  var i = 0;
+  function type(){
+    if(i <= msg.length){
+      target.textContent = msg.slice(0, i);
+      i++;
+      setTimeout(type, 18);
+    } else {
+      var cursor = document.createElement('span');
+      cursor.id = 'chirpy-hack-cursor';
+      target.appendChild(cursor);
+    }
+  }
+  type();
+  document.getElementById('chirpy-hack-close').addEventListener('click', function(){
+    var overlay = document.getElementById('chirpy-hack-overlay');
+    overlay.style.transition = 'opacity .4s';
+    overlay.style.opacity = '0';
+    setTimeout(function(){ overlay.remove(); }, 400);
+  });
+})();
+</script>
 </body></html>
